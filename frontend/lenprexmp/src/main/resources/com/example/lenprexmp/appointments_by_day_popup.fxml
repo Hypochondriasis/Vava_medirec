@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #ebf2fa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lenprexmp.AppointmentsByDayController">
+
+    <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+
+        <Label fx:id="titleLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="%appointment.day.label" />
+
+        <Label fx:id="dateLabel" style="-fx-font-size: 14px;" text="2025-04-19" />
+
+        <ListView fx:id="appointmentsListView" VBox.vgrow="ALWAYS" />
+
+        <Button fx:id="closeButton" maxWidth="Infinity" onAction="#handleClose" text="%button.close" />
+    </VBox>
+</AnchorPane>

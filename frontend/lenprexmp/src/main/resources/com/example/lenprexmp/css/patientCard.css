@@ -1,0 +1,74 @@
+.root {
+    -fx-background-color: #ebf2fa;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+}
+
+.label {
+    -fx-text-fill: #2d2d2d;
+    -fx-font-weight: bold;
+}
+
+.text-field {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d0d4e4;
+    -fx-border-width: 1;
+    -fx-padding: 6 10;
+}
+
+.button {
+    -fx-background-color: #3366ff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 6 14;
+
+}
+.addAllergyButtonb{
+    -fx-font-size: 18px;
+}
+
+.button:hover {
+    -fx-background-color: #274bcc;
+}
+
+.titled-pane {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #2d2d2d;
+    -fx-font-weight: bold;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-color: #dce0ec;
+    -fx-border-width: 1;
+    -fx-padding: 10;
+}
+
+.titled-pane > .title {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3e4a5c;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #d0d4e4;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+.scroll-pane {
+    -fx-background-color: #ebf2fa;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .content {
+    -fx-background-color: transparent;
+}
