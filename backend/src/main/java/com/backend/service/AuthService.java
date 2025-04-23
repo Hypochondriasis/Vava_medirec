@@ -20,7 +20,7 @@ public class AuthService {
 	public static LoginResponse login(String mail, String heslo) {
 		logger.debug("Entering login() with email={}", mail);
 		String query =
-			"SELECT id FROM User WHERE email = ? AND password_hash = ?";
+				"SELECT id FROM \"User\" WHERE emal = ? AND password_hash = ?";
 		LoginResponse odpoved = new LoginResponse();
 
 		try (

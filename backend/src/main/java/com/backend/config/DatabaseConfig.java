@@ -19,7 +19,7 @@ public class DatabaseConfig {
 
 	static {
 		HikariDataSource ds = null;
-		try (InputStream input = new FileInputStream("config/db.properties")) {
+		try (InputStream input = DatabaseConfig.class.getClassLoader().getResourceAsStream("db.properties")) {
 			Properties props = new Properties();
 			props.load(input);
 
