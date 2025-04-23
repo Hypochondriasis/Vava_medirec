@@ -17,7 +17,7 @@ public class AuthService {
 
     public static LoginResponse login(String mail, String heslo) {
         logger.debug("Entering login() with email={}", mail);
-        String query = "SELECT id FROM User WHERE email = ? AND password_hash = ?";
+        String query = "SELECT id FROM public.\"User\" WHERE email = ? AND password_hash = ?";
         LoginResponse odpoved = new LoginResponse();
 
         try (Connection connection = DatabaseConfig.getConnection();

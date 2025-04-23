@@ -1,6 +1,4 @@
 module org.medirec{
-    requires javafx.controls;
-    requires javafx.fxml;
     requires javafx.web;
 
     // Hansolo modules:
@@ -20,6 +18,7 @@ module org.medirec{
     requires com.zaxxer.hikari;
     requires org.slf4j;
     requires static lombok;
+    requires MaterialFX;
 
     opens org.medirec.frontend.controller to javafx.fxml;
     exports org.medirec.frontend;

@@ -18,7 +18,7 @@ public class DatabaseConfig {
 
     static {
         HikariDataSource ds = null;
-        try (InputStream input = new FileInputStream("config/db.properties")) {
+        try (InputStream input = new FileInputStream("src/main/resources/org/medirec/backend/db.properties")) {
             Properties props = new Properties();
             props.load(input);
 
