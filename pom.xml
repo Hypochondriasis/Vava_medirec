@@ -11,9 +11,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <junit.version>5.9.1</junit.version>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -148,46 +149,6 @@
             <artifactId>controlsfx</artifactId>
             <version>11.2.0</version>
         </dependency>
-
-
-        <!-- Countries -->
-        <!--
-        <dependency>
-            <groupId>eu.hansolo.fx</groupId>
-            <artifactId>countries</artifactId>
-            <version>21.0.19</version>
-        </dependency>           -->                       <!-- :contentReference[oaicite:0]{index=0} -->
-
-        <!-- Heatmap (used by Countries) -->
-        <!--
-        <dependency>
-            <groupId>eu.hansolo.fx</groupId>
-            <artifactId>heatmap</artifactId>
-            <version>21.0.11</version>
-        </dependency>     -->                             <!-- :contentReference[oaicite:1]{index=1} -->
-
-        <!-- ToolboxFX -->
-        <!--
-        <dependency>
-            <groupId>eu.hansolo</groupId>
-            <artifactId>toolboxfx</artifactId>
-            <version>21.0.7</version>
-        </dependency>    -->                              <!-- :contentReference[oaicite:2]{index=2} -->
-
-        <!-- Toolbox core -->
-        <!--
-        <dependency>
-            <groupId>eu.hansolo</groupId>
-            <artifactId>toolbox</artifactId>
-            <version>21.0.17</version>
-        </dependency>         -->                         <!-- :contentReference[oaicite:3]{index=3} -->
-
-        <!--
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-swing</artifactId>
-            <version>20-ea+4</version>
-        </dependency>   -->
     </dependencies>
 
     <build>
@@ -206,6 +167,7 @@
                             <version>1.18.32</version>
                         </path>
                     </annotationProcessorPaths>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -228,6 +190,17 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <!-- For Java 9+ we could omit this, but it guarantees UTF-8 copy -->
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <!-- If w need pre-Java 9 ISO-8859-1 for some bundles uncomment this: -->
+                    <!-- <propertiesEncoding>ISO-8859-1</propertiesEncoding> -->
+                </configuration>
             </plugin>
         </plugins>
     </build>
