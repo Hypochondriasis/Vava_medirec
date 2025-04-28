@@ -110,12 +110,12 @@ public class LoginController implements Initializable {
 
                 //4) Set and show
                 stage.setScene(dashboardScene);
-                stage.setTitle(bundle.getString("dashboard.title"));
+                stage.setTitle("Medirec - Home");
                 stage.show();
 
             } catch (IOException e) {
                 logger.error("Failed to load dashboard.fxml", e);
-                showAlert(Alert.AlertType.ERROR, bundle.getString("scene.switch.error"));
+                showAlert(Alert.AlertType.ERROR, bundle.getString("Display error"));
             }
 
         } else {
