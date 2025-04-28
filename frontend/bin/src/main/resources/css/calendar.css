@@ -1,0 +1,127 @@
+.button, .label {
+    -fx-wrap-text: true;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+
+#topContainer {
+    -fx-background-color: #f5f7fa;
+    -fx-padding: 15 20 10 20;
+    -fx-spacing: 8;
+}
+
+
+#calendarTitle {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b2d42;
+}
+.scroll-pane .scroll-bar:vertical,
+.scroll-pane .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}
+
+
+#prevMonthButton, #nextMonthButton {
+    -fx-background-color: transparent;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3b3b3b;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 4 10 4 10;
+}
+
+
+
+#newAppointmentButton {
+    -fx-background-color: #3366cc;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 6 16 6 16;
+    -fx-font-size: 14px;
+}
+
+
+#dayViewButton, #weekViewButton, #monthViewButton {
+    -fx-min-width: 100;
+    -fx-pref-width: 100;
+    -fx-max-width: Infinity;
+
+    -fx-background-color: #e2e6ed;
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 0 8 0;
+}
+
+#dayViewButton:selected,
+#weekViewButton:selected,
+#monthViewButton:selected {
+    -fx-background-color: #3366cc;
+    -fx-text-fill: white;
+}
+
+
+#legendRow {
+    -fx-spacing: 15;
+}
+
+.legend-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #444;
+}
+
+
+#calendarGrid {
+    -fx-padding: 20;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+    -fx-background-color: #f3f6fb;
+    -fx-alignment: center;
+}
+.calendar-cell {
+    -fx-background-color: white;
+    -fx-border-color: #dcdfe3;
+    -fx-min-height: 80;
+    -fx-min-width: 100;
+    -fx-padding: 8;
+    -fx-alignment: top-left;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);
+}
+
+.day-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b2d42;
+}
+.day-header {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #444;
+    -fx-pref-width: 100;
+    -fx-alignment: center;
+}
+.legend-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b2d42;
+    -fx-font-size: 13px;
+}
+
+.legend-dot {
+    -fx-font-size: 14px;
+}
+
+.legend-label {
+    -fx-text-fill: #444;
+    -fx-font-size: 12px;
+}
+.appt-label {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+}

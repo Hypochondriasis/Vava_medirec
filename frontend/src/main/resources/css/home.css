@@ -1,0 +1,104 @@
+
+
+#sidebar {
+    -fx-background-color: #314f96;
+    -fx-text-fill: white;
+}
+
+#sidebar .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+#sidebar .button:hover {
+    -fx-background-color: #4568b2;
+}
+#root {
+    -fx-background-color: #f4f8fc;
+}
+
+/* Štýl pre hlavné boxy */
+#mainBox {
+    -fx-background-color: #ebf2fa;
+    -fx-background-radius: 10px;
+}
+
+.button {
+    -fx-background-color: #3a5fc9;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #5a7fe0;
+}
+
+
+.dashboard-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-padding: 10 20 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0.1, 0, 2);
+}
+
+
+.text-area {
+    -fx-font-size: 16px;
+    -fx-background-color: #dfefff;
+    -fx-background-radius: 20px;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+
+.list-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #cbdaf1;
+    -fx-border-radius: 10;
+    -fx-padding: 5 10 5 10;
+}
+
+.list-cell {
+    -fx-font-size: 14px;
+    -fx-padding: 8 5 8 5;
+    -fx-background-color: transparent;
+}
+
+.list-cell:filled:selected, .list-cell:filled:hover {
+    -fx-background-color: #d9e6fb;
+    -fx-text-fill: black;
+}
+
+
+#nameHolder .label {
+    -fx-text-fill: white;
+}
+.dashboard-number {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 20px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-alignment: center;
+    -fx-min-width: 48px;
+    -fx-min-height: 48px;
+    -fx-max-width: 48px;
+    -fx-max-height: 48px;
+    -fx-padding: 10;
+    -fx-border-color: #d0dce8;
+    -fx-border-radius: 20px;
+    -fx-border-width: 1px;
+}
+.check-box {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+.check-box:selected {
+    -fx-text-fill: #95a5a6;
+}
