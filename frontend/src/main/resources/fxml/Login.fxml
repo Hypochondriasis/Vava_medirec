@@ -51,7 +51,7 @@
                         <TextField fx:id="emailResetField" prefHeight="94.0" prefWidth="459.0" promptText="%email" style="-fx-background-radius: 5;" VBox.vgrow="ALWAYS" />
                         <TextField fx:id="nameResetField" promptText="%name" style="-fx-background-radius: 5;" VBox.vgrow="ALWAYS" />
                         <PasswordField fx:id="newPasswordField" promptText="%reset.newpass" style="-fx-background-radius: 5;" VBox.vgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onAction="#handlePasswordReset" styleClass="btn" text="%reset.confirm" VBox.vgrow="ALWAYS" />
+                        <Button fx:id="passwordResetButton" mnemonicParsing="false" onAction="#handlePasswordReset" styleClass="btn" text="%reset.confirm" VBox.vgrow="ALWAYS" />
                         <Label fx:id="backToLoginLabel" onMouseClicked="#showLoginPane" styleClass="backToLoginLabel" text="%reset.back" />
                         <MFXButton fx:id="langButton1" onAction="#onLanguageSwitch" prefWidth="150.0" styleClass="btn" text="%login.lang" />
                      </children>

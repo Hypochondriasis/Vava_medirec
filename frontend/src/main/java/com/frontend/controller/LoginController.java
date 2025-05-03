@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -54,7 +51,13 @@ public class LoginController implements Initializable {
     @FXML
     private TextField emailResetField;
     @FXML
+    private Button passwordResetButton;
+    @FXML
     private PasswordField newPasswordField;
+    @FXML
+    private Label backToLoginLabel;
+    @FXML
+    private MFXButton langButton1;
 
     //Resource bundle
     private ResourceBundle bundle;
@@ -130,48 +133,61 @@ public class LoginController implements Initializable {
         alert.initOwner(root.getScene().getWindow());
         alert.showAndWait();
     }
-
+    
     @FXML
-    private void onLanguageSwitch() {
-        // 1) Remember which pane was visible
-        boolean wasReset = resetPane.isVisible();
-
-        // 2) Toggle the locale
+    private void onLanguageSwitch(){
+        // Toggle to local
         Locale current = AppSettings.getLocale();
-        Locale next = current.getLanguage().equals("sk")
-                ? Locale.ENGLISH
-                : new Locale("sk", "SK");
+        Locale next = current.getLanguage().equals("sk") ? Locale.ENGLISH : new Locale("sk", "SK");
         AppSettings.setLocale(next);
 
-        // 3) Reload and restore
-        reloadLoginPane(next, wasReset);
+        // Updating the UI text without needing to reload the pane
+        updateUILanguage(next);
     }
 
-    private void reloadLoginPane(Locale locale, boolean wasReset) {
+    private void updateUILanguage(Locale locale) {
         try {
-            logger.debug("Reloading login pane (wasReset={}) with locale {}", wasReset, locale);
-            ResourceBundle newBundle =
-                    ResourceBundle.getBundle("messages", locale);
-
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/fxml/login.fxml"),
-                    newBundle
-            );
-            Parent newRoot = loader.load();
-
-            // 4) Grab the new controller and restore its pane-state
-            LoginController newCtrl = loader.getController();
-            if (wasReset) {
-                newCtrl.showResetPane();
-            } else {
-                newCtrl.showLoginPane();
+            // Getting the new resource bundle
+            ResourceBundle newBundle = ResourceBundle.getBundle("messages", locale);
+            // Updating login pane elements
+            if (usernameField != null) {
+                usernameField.setPromptText(newBundle.getString("login.username"));
             }
-
-            // 5) Swap out the scene graph
-            root.getChildren().setAll(newRoot);
-
-        } catch (IOException e) {
-            logger.error("Failed to reload login pane", e);
+            if (passwordField != null) {
+                passwordField.setPromptText(newBundle.getString("login.password"));
+            }
+            if (loginButton != null) {
+                loginButton.setText(newBundle.getString("login.button"));
+            }
+            if (forgotPasswordLabel != null) {
+                forgotPasswordLabel.setText(newBundle.getString("login.forgot"));
+            }
+            if (langButton != null) {
+                langButton.setText(newBundle.getString("login.lang"));
+            }
+            // Updating reset pane elements
+            if (emailResetField != null) {
+                emailResetField.setPromptText(newBundle.getString("email"));
+            }
+            if (nameResetField != null) {
+                nameResetField.setPromptText(newBundle.getString("name"));
+            }
+            if (newPasswordField != null) {
+                newPasswordField.setPromptText(newBundle.getString("reset.newpass"));
+            }
+            if (backToLoginLabel != null) {
+                backToLoginLabel.setText(newBundle.getString("reset.back"));
+            }
+            if (passwordResetButton != null) {
+                passwordResetButton.setText(newBundle.getString("reset.back"));
+            }
+            if (langButton1 != null) {
+                langButton1.setText(newBundle.getString("login.lang"));
+            }
+        }catch (java.util.MissingResourceException e){
+            logger.error("Missing resource key: {}", e.getKey());
+        }catch (Exception e) {
+            logger.error("Failed to update UI language", e);
         }
     }
 
