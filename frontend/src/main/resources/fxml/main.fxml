@@ -28,22 +28,22 @@
                 </HBox>
                 <VBox fx:id="menu" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                     <children>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onHomeClicked" prefWidth="160.0" text="%menu.home">
+                        <Button fx:id="homeButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onHomeClicked" prefWidth="160.0" text="%menu.home">
                             <font>
                                 <Font size="14.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onCalendarClicked" prefWidth="160.0" text="%menu.calendar">
+                        <Button fx:id="calendarButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onCalendarClicked" prefWidth="160.0" text="%menu.calendar">
                             <font>
                                 <Font size="14.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onPatientsClicked" prefWidth="160.0" text="%menu.patients">
+                        <Button fx:id="patientsButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onPatientsClicked" prefWidth="160.0" text="%menu.patients">
                             <font>
                                 <Font size="14.0" />
                             </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onReportsClicked" prefWidth="160.0" text="%menu.reports">
+                        <Button fx:id="reportsButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onReportsClicked" prefWidth="160.0" text="%menu.reports">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -51,7 +51,7 @@
                     </children>
                 </VBox>
                 <VBox fx:id="spacer" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                <Label onMouseClicked="#onSettingsClicked" style="-fx-text-fill: #ffffff;" text="%menu.settings">
+                <Label fx:id="settingsLabel" onMouseClicked="#onSettingsClicked" style="-fx-text-fill: #ffffff;" text="%menu.settings">
                     <font>
                         <Font size="14.0" />
                     </font>

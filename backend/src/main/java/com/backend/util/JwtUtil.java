@@ -28,6 +28,6 @@ public class JwtUtil {
 	}
 
 	public static void saveToken(Token vstup) {
-		token = token;
+		token = vstup;
 	}
 }

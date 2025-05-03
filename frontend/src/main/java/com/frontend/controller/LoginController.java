@@ -1,5 +1,8 @@
 package com.frontend.controller;
 
+import com.backend.model.Token;
+import com.backend.model.User;
+import com.backend.util.JwtUtil;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -97,13 +100,35 @@ public class LoginController implements Initializable {
         LoginResponse resp = AuthService.login(email, pw);
         if (resp.isSuccess()) {
             logger.info("Login successful, token={}", resp.getToken());
-            try{
+            try {
+                String token = resp.getToken();
+                System.out.println(token);
+
+                // Get the User object from the token
+                User currentUser;
+                try {
+                    currentUser = JwtUtil.getUserFromToken();
+                    logger.info("Retrieved user: {}", currentUser);
+
+
+                } catch (Exception e) {
+                    logger.error("Failed to get user from token", e);
+                    return;
+                }
+
                 //1) Load the next FXML
                 FXMLLoader loader = new FXMLLoader(
                         getClass().getResource("/fxml/main.fxml"),
-                        bundle  // or a new bundle if you want localized UI
+                        bundle
                 );
+
+                // Pass the user to the next controller
+                // This requires your MainController to have a setUser method
                 Parent dashboardRoot = loader.load();
+                MainController mainController = loader.getController();
+                if (mainController != null) {
+                    mainController.setUser(currentUser);
+                }
 
                 //2) Wrap in a Scene
                 Scene dashboardScene = new Scene(dashboardRoot);
@@ -118,9 +143,8 @@ public class LoginController implements Initializable {
 
             } catch (IOException e) {
                 logger.error("Failed to load dashboard.fxml", e);
-                showAlert(Alert.AlertType.ERROR, bundle.getString("scene.switch.error") + "\n" + e.getMessage());   // more specific error message
+                showAlert(Alert.AlertType.ERROR, bundle.getString("scene.switch.error") + "\n" + e.getMessage());
             }
-
         } else {
             showAlert(Alert.AlertType.WARNING, bundle.getString("login.error"));
         }
@@ -133,7 +157,7 @@ public class LoginController implements Initializable {
         alert.initOwner(root.getScene().getWindow());
         alert.showAndWait();
     }
-    
+
     @FXML
     private void onLanguageSwitch(){
         // Toggle to local

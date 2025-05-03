@@ -3,6 +3,8 @@ package com.frontend.controller;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
+import com.backend.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,26 +17,39 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MainController {
-
+	// Logger
+	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
+	//User session
+	private User user;
+	// FXML elements
 	@FXML
 	private Button languageButton;
-
 	@FXML
 	private ImageView avatar;
-
 	@FXML
 	private Label nameLabel;
-
 	@FXML
 	private ResourceBundle resources;
-
 	@FXML
 	private BorderPane root;
-
 	@FXML
 	private StackPane mainContent;
+	@FXML
+	private Label medirecLabel;
+	@FXML
+	private Button homeButton;
+	@FXML
+	private Button calendarButton;
+	@FXML
+	private Button patientsButton;
+	@FXML
+	private Button reportsButton;
+	@FXML
+	private Label settingsLabel;
 
 	private Locale currentLocale = Locale.getDefault();
 
@@ -96,24 +111,53 @@ public class MainController {
 	}
 
 	@FXML
-	private void onLanguageSwitch(ActionEvent event) throws IOException {
-		Locale currentLocale = AppSettings.getLocale();
+	private void onLanguageSwitch(){
+		// Toggle to local
+		Locale current = AppSettings.getLocale();
+		Locale next = current.getLanguage().equals("sk") ? Locale.ENGLISH : new Locale("sk", "SK");
+		AppSettings.setLocale(next);
 
-		Locale newLocale = currentLocale.getLanguage().equals("sk")
-			? new Locale("en")
-			: new Locale("sk");
+		// Updating the UI text without needing to reload the pane
+		updateUILanguage(next);
+	}
 
-		AppSettings.setLocale(newLocale);
+	private void updateUILanguage(Locale locale) {
+		try {
+			// Getting the new resource bundle
+			ResourceBundle newBundle = ResourceBundle.getBundle("messages", locale);
+			if (medirecLabel != null) {
+				medirecLabel.setText(newBundle.getString("app.title"));
+			}
+			if (homeButton != null) {
+				homeButton.setText(newBundle.getString("menu.home"));
+			}
+			if (calendarButton != null) {
+				calendarButton.setText(newBundle.getString("menu.calendar"));
+			}
+			if (patientsButton != null) {
+				patientsButton.setText(newBundle.getString("menu.patients"));
+			}
+			if (reportsButton != null) {
+				reportsButton.setText(newBundle.getString("menu.reports"));
+			}
+			if (settingsLabel != null) {
+				settingsLabel.setText(newBundle.getString("menu.settings"));
+			}
+			if (languageButton != null) {
+				languageButton.setText(newBundle.getString("button.switchLanguage"));
+			}
+		}catch (java.util.MissingResourceException e){
+			logger.error("Missing resource key: {}", e.getKey());
+		}catch (Exception e) {
+			logger.error("Failed to update UI language", e);
+		}
+	}
 
-		ResourceBundle bundle = ResourceBundle.getBundle("messages", newLocale);
-		FXMLLoader loader = new FXMLLoader(
-			getClass().getResource("main.fxml"),
-			bundle
-		);
-		Parent root = loader.load();
+	protected User getUser() {
+		return this.user;
+	}
 
-		Stage stage = (Stage) languageButton.getScene().getWindow();
-		stage.setScene(new Scene(root));
-		stage.show();
+	protected void setUser(User user) {
+		this.user = user;
 	}
 }
