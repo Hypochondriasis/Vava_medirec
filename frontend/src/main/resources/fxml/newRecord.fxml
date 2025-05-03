@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fx:id="scrollPane" fitToWidth="true" style="-fx-background-color: #ebf2fa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.medirec.frontend.controller.NewRecordDialogController">
+<ScrollPane fx:id="scrollPane" fitToWidth="true" style="-fx-background-color: #ebf2fa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.frontend.controller.NewRecordDialogController">
    <content>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: #ebf2fa;">
          <children>

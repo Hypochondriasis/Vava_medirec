@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #ebf2fa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.medirec.frontend.controller.AppointmentsByDayController">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #ebf2fa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.frontend.controller.AppointmentsByDayController">
 
     <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 

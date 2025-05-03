@@ -8,7 +8,7 @@
 
 <VBox xmlns="http://javafx.com/javafx/19"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="org.medirec.frontend.controller.SettingsController"
+      fx:controller="com.frontend.controller.SettingsController"
       spacing="15.0">
 
     <padding>

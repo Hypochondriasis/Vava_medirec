@@ -94,10 +94,10 @@ public class LoginController implements Initializable {
         LoginResponse resp = AuthService.login(email, pw);
         if (resp.isSuccess()) {
             logger.info("Login successful, token={}", resp.getToken());
-            try {
+            try{
                 //1) Load the next FXML
                 FXMLLoader loader = new FXMLLoader(
-                        getClass().getResource("/fxml/home.fxml"),
+                        getClass().getResource("/fxml/main.fxml"),
                         bundle  // or a new bundle if you want localized UI
                 );
                 Parent dashboardRoot = loader.load();
@@ -110,12 +110,12 @@ public class LoginController implements Initializable {
 
                 //4) Set and show
                 stage.setScene(dashboardScene);
-                stage.setTitle(bundle.getString("dashboard.title"));
+                stage.setTitle(bundle.getString("login.title"));
                 stage.show();
 
             } catch (IOException e) {
                 logger.error("Failed to load dashboard.fxml", e);
-                showAlert(Alert.AlertType.ERROR, bundle.getString("scene.switch.error"));
+                showAlert(Alert.AlertType.ERROR, bundle.getString("scene.switch.error") + "\n" + e.getMessage());   // more specific error message
             }
 
         } else {

@@ -40,7 +40,7 @@ public class MainController {
 
 	@FXML
 	public void initialize() {
-		loadView("home.fxml");
+		loadView("Home.fxml");
 
 		currentLocale = AppSettings.getLocale();
 		languageButton.setText(resources.getString("button.switchLanguage"));
@@ -58,7 +58,7 @@ public class MainController {
 		try {
 			System.out.println("Loading: " + fxmlPath);
 			FXMLLoader loader = new FXMLLoader(
-				getClass().getResource(fxmlPath),
+				getClass().getResource("/fxml/" + fxmlPath),
 				resources
 			);
 			Node content = loader.load();
@@ -71,7 +71,7 @@ public class MainController {
 
 	@FXML
 	private void onHomeClicked() {
-		loadView("home.fxml");
+		loadView("Home.fxml");
 	}
 
 	@FXML
