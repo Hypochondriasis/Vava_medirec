@@ -3888,8 +3888,6 @@ java.lang.IllegalArgumentException: Can not set java.time.LocalDate field org.me
 2025-05-04 15:27:42.478 [JavaFX Application Thread] ERROR o.m.m.f.c.PatientInfoController - Missing resource key: patient.label.newCard
 2025-05-04 15:28:00.325 [JavaFX Application Thread] ERROR o.m.m.f.c.PatientInfoController - Missing resource key: patient.label.newCard
 2025-05-04 15:28:08.134 [JavaFX Application Thread] ERROR o.m.m.f.c.PatientInfoController - Missing resource key: patient.label.newCard
-<<<<<<< Updated upstream
-=======
 2025-05-04 15:38:42.612 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://localhost:5432/medirec, user=postgres
 2025-05-04 15:38:42.624 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
 2025-05-04 15:38:42.729 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@414d0ca8
@@ -5892,4 +5890,3 @@ java.lang.NullPointerException: Cannot invoke "org.medirec.medirec.backend.model
 2025-05-04 20:02:45.422 [MyHikariCP:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Thread starvation or clock leap detected (housekeeper delta=59s852ms183µs).
 2025-05-04 20:02:45.422 [MyHikariCP:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Thread starvation or clock leap detected (housekeeper delta=59s851ms983µs).
 2025-05-04 20:03:11.133 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - Inserted new Patient with generated id=3
->>>>>>> Stashed changes

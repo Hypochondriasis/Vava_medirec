@@ -1,13 +1,8 @@
 package org.medirec.medirec.backend.controller;
 
 import org.medirec.medirec.backend.model.*;
-<<<<<<< Updated upstream
-import com.backend.service.DatabaseService;
-import com.backend.util.JwtUtil;
-=======
 import org.medirec.medirec.backend.service.DatabaseService;
 import org.medirec.medirec.backend.util.JwtUtil;
->>>>>>> Stashed changes
 import java.util.List;
 
 public class DatabaseController {

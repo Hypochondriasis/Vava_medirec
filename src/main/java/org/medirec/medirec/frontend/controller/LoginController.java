@@ -131,10 +131,7 @@ public class LoginController implements Initializable {
                     if (mainController != null) {
                         mainController.setUser(currentUser);
                         mainController.setUserInfo();
-<<<<<<< Updated upstream
-=======
                         mainController.loadView("Home.fxml");
->>>>>>> Stashed changes
                     }
 
                     //2) Wrap in a Scene

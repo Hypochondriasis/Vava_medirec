@@ -149,12 +149,7 @@ public class DatabaseService {
 
 	public static <T> T createOrUpdate(T obj) throws Exception {
 		Class<?> cls = obj.getClass();
-<<<<<<< Updated upstream
-		String table = getTableName(cls);
-		table = table.replace("\"", "");
-=======
 		String table = getTableName(cls).replace("\"", "");
->>>>>>> Stashed changes
 		if (table.equals("user")) table += "s";
 		List<Field> cols = getColumns(cls);
 		Field idField = cls.getDeclaredField("id");

@@ -1,22 +1,14 @@
 package org.medirec.medirec.frontend.controller;
 
-<<<<<<< Updated upstream
-=======
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> Stashed changes
 import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-<<<<<<< Updated upstream
-import javafx.stage.Stage;
-import javafx.util.Callback;
-import org.medirec.medirec.backend.model.User;
-=======
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -27,7 +19,6 @@ import org.medirec.medirec.backend.model.Patient;
 import org.medirec.medirec.backend.model.User;
 import org.medirec.medirec.backend.util.BatchXMLExporter;
 import org.medirec.medirec.backend.util.PatientImporter;
->>>>>>> Stashed changes
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -166,32 +157,6 @@ public class HomeController {
 
 	@FXML
 	public void onNewPatient() {
-<<<<<<< Updated upstream
-		try {
-			ResourceBundle bundle = ResourceBundle.getBundle(
-				"messages",
-				AppSettings.getLocale()
-			);
-
-			FXMLLoader loader = new FXMLLoader(
-				getClass().getResource("AddPatientDialog.fxml"),
-				bundle
-			);
-			Scene scene = new Scene(loader.load());
-
-			AddPatientController controller = loader.getController();
-			controller.setParentController(this);
-			controller.setBundle(bundle);
-
-			Stage popup = new Stage();
-			popup.setTitle("AddPatientDialogTitle");
-			popup.setScene(scene);
-			popup.setResizable(false);
-
-			popup.showAndWait();
-		} catch (Exception e) {
-			e.printStackTrace();
-=======
 		try{
 			logger.info("Attempting to import a new patient...");
 			if(user.getRole().getName().equals("Doctor")){
@@ -218,16 +183,11 @@ public class HomeController {
 		} catch (Exception e) {
 			logger.error("Error importing patient", e);
 			showAlert(Alert.AlertType.ERROR, "Error importing pacient", "Vyskytol sa problém pri importe pacienta");
->>>>>>> Stashed changes
 		}
 	}
 
 	@FXML
 	private void onExportData() {
-<<<<<<< Updated upstream
-		// neviem presene co chcu
-		System.out.println("Dáta boli exportované.");
-=======
 		try {
 			logger.info("Attempting to export data...");
 			if (user.getRole().getName().equals("Doctor")) {
@@ -243,7 +203,6 @@ public class HomeController {
 			logger.error("Error exporting data", e);
 			showAlert(Alert.AlertType.ERROR, "Error exporting data", "Vyskytol sa problém pri exporte dát");
 		}
->>>>>>> Stashed changes
 	}
 
 	protected void onLanguageSwitch(){
@@ -258,13 +217,10 @@ public class HomeController {
 
 	protected void updateUILanguage(Locale locale) {
 		try {
-<<<<<<< Updated upstream
-=======
 			if (!user.getRole().getName().equals("Doctor")) {
 				exportDataButton.setVisible(false);
 				newPatientButton.setVisible(false);
 			}
->>>>>>> Stashed changes
 			// Getting the new resource bundle
 			ResourceBundle newBundle = ResourceBundle.getBundle("org.medirec.medirec.frontend.messages", locale);
 			if(newPatientButton != null) {
@@ -308,8 +264,6 @@ public class HomeController {
 	protected void setUser(User user) {
 		this.user = user;
 	}
-<<<<<<< Updated upstream
-=======
 
 	//Helper function to show alerts
 	private void showAlert(Alert.AlertType type, String msg_en, String msg_sk) {
@@ -324,5 +278,4 @@ public class HomeController {
 		alert.setHeaderText(null);
 		alert.showAndWait();
 	}
->>>>>>> Stashed changes
 }
