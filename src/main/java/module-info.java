@@ -12,4 +12,8 @@ module org.medirec.medirec {
 
     opens org.medirec.medirec.frontend.controller to javafx.fxml;
     exports org.medirec.medirec.frontend;
+<<<<<<< Updated upstream
+=======
+    exports org.medirec.medirec.backend.model;
+>>>>>>> Stashed changes
 }

@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+<<<<<<< Updated upstream
+=======
+import javafx.scene.control.Alert;
+>>>>>>> Stashed changes
 import org.medirec.medirec.backend.model.*;
 import org.medirec.medirec.backend.model.Appointment;
 import org.medirec.medirec.backend.model.MedicalRecord;
@@ -63,7 +67,11 @@ public class MainController {
 
 	@FXML
 	public void initialize() {
+<<<<<<< Updated upstream
 		loadView("Home.fxml");
+=======
+		//loadView("Home.fxml");
+>>>>>>> Stashed changes
 
 		currentLocale = AppSettings.getLocale();
 		languageButton.setText(resources.getString("button.switchLanguage"));
@@ -122,7 +130,11 @@ public class MainController {
 		}
 	}
 
+<<<<<<< Updated upstream
 	private void loadView(String fxmlPath) {
+=======
+	protected void loadView(String fxmlPath) {
+>>>>>>> Stashed changes
 		try {
 			System.out.println("Loading: " + fxmlPath);
 			FXMLLoader loader = new FXMLLoader(
@@ -277,4 +289,22 @@ public class MainController {
 	protected void setUser(User user) {
 		this.user = user;
 	}
+<<<<<<< Updated upstream
+=======
+
+	//Helper function to show alerts
+	private void showAlert(Alert.AlertType type, String msg_en, String msg_sk) {
+		Locale current = AppSettings.getLocale();
+		String msg;
+		if (current.getLanguage().equals("sk")) {
+			msg = msg_sk;
+		}else{
+			msg = msg_en;
+		}
+		Alert alert = new Alert(type, msg);
+		alert.setHeaderText(null);
+		alert.initOwner(root.getScene().getWindow());
+		alert.showAndWait();
+	}
+>>>>>>> Stashed changes
 }

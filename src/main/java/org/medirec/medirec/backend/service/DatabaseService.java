@@ -149,8 +149,12 @@ public class DatabaseService {
 
 	public static <T> T createOrUpdate(T obj) throws Exception {
 		Class<?> cls = obj.getClass();
+<<<<<<< Updated upstream
 		String table = getTableName(cls);
 		table = table.replace("\"", "");
+=======
+		String table = getTableName(cls).replace("\"", "");
+>>>>>>> Stashed changes
 		if (table.equals("user")) table += "s";
 		List<Field> cols = getColumns(cls);
 		Field idField = cls.getDeclaredField("id");
@@ -159,26 +163,17 @@ public class DatabaseService {
 
 		List<Field> nonId = new ArrayList<>();
 		for (Field f : cols) {
-			if (!f.getName().equals("id")) nonId.add(f);
+			if (!f.getName().equals("id") && !f.isAnnotationPresent(IgnoreColumn.class)) {
+				nonId.add(f);
+			}
 		}
 
 		try (Connection conn = DatabaseConfig.getConnection()) {
 			if ((Integer) idVal == 0) {
 				// INSERT
-				String colNames = String.join(
-					", ",
-					nonId.stream().map(Field::getName).toArray(String[]::new)
-				);
-				String placeholders = String.join(
-					", ",
-					Collections.nCopies(nonId.size(), "?")
-				);
-				String sql = String.format(
-					"INSERT INTO %s (%s) VALUES (%s) RETURNING id",
-					table,
-					colNames,
-					placeholders
-				);
+				String colNames = String.join(", ", nonId.stream().map(Field::getName).toArray(String[]::new));
+				String placeholders = String.join(", ", Collections.nCopies(nonId.size(), "?"));
+				String sql = String.format("INSERT INTO %s (%s) VALUES (%s) RETURNING id", table, colNames, placeholders);
 				logger.debug("create: SQL = {}, values = {}", sql, nonId);
 
 				try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -190,34 +185,15 @@ public class DatabaseService {
 					try (ResultSet rs = ps.executeQuery()) {
 						if (rs.next()) {
 							idField.set(obj, rs.getObject(1));
-							logger.info(
-								"Inserted new {} with generated id={}",
-								cls.getSimpleName(),
-								rs.getObject(1)
-							);
+							logger.info("Inserted new {} with generated id={}", cls.getSimpleName(), rs.getObject(1));
 						}
 					}
 				}
 			} else {
 				// UPDATE
-				String setClause = String.join(
-					", ",
-					nonId
-						.stream()
-						.map(f -> f.getName() + " = ?")
-						.toArray(String[]::new)
-				);
-				String sql = String.format(
-					"UPDATE %s SET %s WHERE id = ?",
-					table,
-					setClause
-				);
-				logger.debug(
-					"update: SQL = {}, id = {}, values = {}",
-					sql,
-					idVal,
-					nonId
-				);
+				String setClause = String.join(", ", nonId.stream().map(f -> f.getName() + " = ?").toArray(String[]::new));
+				String sql = String.format("UPDATE %s SET %s WHERE id = ?", table, setClause);
+				logger.debug("update: SQL = {}, id = {}, values = {}", sql, idVal, nonId);
 
 				try (PreparedStatement ps = conn.prepareStatement(sql)) {
 					int idx = 1;
@@ -227,21 +203,11 @@ public class DatabaseService {
 					}
 					ps.setObject(idx, idVal);
 					int updated = ps.executeUpdate();
-					logger.info(
-						"Updated {} record(s) in {} for id={}",
-						updated,
-						table,
-						idVal
-					);
+					logger.info("Updated {} record(s) in {} for id={}", updated, table, idVal);
 				}
 			}
 		} catch (Exception e) {
-			logger.error(
-				"Error in createOrUpdate for {} [{}]",
-				cls.getSimpleName(),
-				idVal,
-				e
-			);
+			logger.error("Error in createOrUpdate for {} [{}]", cls.getSimpleName(), idVal, e);
 			throw e;
 		}
 
