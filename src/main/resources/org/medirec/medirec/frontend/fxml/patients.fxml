@@ -13,7 +13,7 @@
     <children>
         <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
             <children>
-                <Label text="%patient.list.title">
+                <Label fx:id="patientsListLabel" text="%patient.list.title">
                     <font><Font size="14.0" /></font>
                 </Label>
                 <ListView fx:id="patientListView" VBox.vgrow="ALWAYS" onMouseClicked="#loadDetail" />
@@ -22,7 +22,7 @@
 
         <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
             <children>
-                <Label styleClass="header" text="%patient.details.title">
+                <Label fx:id="patientDetailsLabel" styleClass="header" text="%patient.details.title">
                     <font><Font size="18.0" /></font>
                 </Label>
                 <GridPane hgap="10" vgap="10" VBox.vgrow="ALWAYS">
@@ -42,45 +42,45 @@
                         <RowConstraints vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Label text="%patient.label.name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label fx:id="patientNameLabel" text="%patient.label.name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                         <Label fx:id="nameLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                        <Label text="%patient.label.rc" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label fx:id="patientRCLabel" text="%patient.label.rc" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                         <Label fx:id="rcLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                        <Label text="%patient.label.insurance" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label fx:id="patientInsuranceLabel" text="%patient.label.insurance" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                         <Label fx:id="insuranceLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                        <Label text="%patient.label.birth" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label fx:id="patientBirthLabel" text="%patient.label.birth" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                         <Label fx:id="birthLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-                        <Label text="%patient.label.city" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label fx:id="patientCityLabel" text="%patient.label.city" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                         <Label fx:id="cityLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-                        <Label text="%patient.label.street" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <Label fx:id="patientStreetLabel" text="%patient.label.street" GridPane.columnIndex="0" GridPane.rowIndex="5" />
                         <Label fx:id="streetLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-                        <Label text="%patient.label.zip" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <Label fx:id="patientZipLabel" text="%patient.label.zip" GridPane.columnIndex="0" GridPane.rowIndex="6" />
                         <Label fx:id="zipLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
-                        <Label text="%patient.label.lastExam" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <Label fx:id="patientLastExamLabel" text="%patient.label.lastExam" GridPane.columnIndex="0" GridPane.rowIndex="7" />
                         <Label fx:id="lastExamLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
-                        <Label text="%patient.label.check" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                        <Label fx:id="patientCheckLabel" text="%patient.label.check" GridPane.columnIndex="0" GridPane.rowIndex="8" />
                         <Label fx:id="checkLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                     </children>
                 </GridPane>
 
                 <FlowPane fx:id="buttonFlow" alignment="CENTER" hgap="10" vgap="10" prefWrapLength="300" VBox.vgrow="NEVER">
                     <children>
-                        <Button text="%patient.button.newCard" onAction="#handleCreateNewCard" mnemonicParsing="true" prefWidth="140" />
-                        <Button text="%patient.button.deleteCard" onAction="#handleDeleteCard" mnemonicParsing="true" prefWidth="140" />
-                        <Button text="%patient.button.search" onAction="#handleSearchPatient" mnemonicParsing="true" prefWidth="140" />
-                        <Button text="%patient.button.functions" onAction="#handleOpenFunctions" mnemonicParsing="true" prefWidth="140" />
-                        <Button text="%patient.button.withoutCard" onAction="#handleWithoutCard" mnemonicParsing="true" prefWidth="140" />
-                        <Button text="%patient.button.print" onAction="#handlePrintDetails" mnemonicParsing="true" prefWidth="140" />
-                        <Button text="%patient.button.outputs" onAction="#handleViewOutputs" mnemonicParsing="true" prefWidth="140" />
-                        <Button text="%patient.button.edit" onAction="#handleEditPatient" mnemonicParsing="true" prefWidth="140" />
+                        <Button fx:id="newCardButton" text="%patient.button.newCard" onAction="#handleCreateNewCard" mnemonicParsing="true" prefWidth="140" />
+                        <Button fx:id="deleteCardButton" text="%patient.button.deleteCard" onAction="#handleDeleteCard" mnemonicParsing="true" prefWidth="140" />
+                        <Button fx:id="searchButton" text="%patient.button.search" onAction="#handleSearchPatient" mnemonicParsing="true" prefWidth="140" />
+                        <Button fx:id="functionsButton" text="%patient.button.functions" onAction="#handleOpenFunctions" mnemonicParsing="true" prefWidth="140" />
+                        <Button fx:id="withoutCardButton" text="%patient.button.withoutCard" onAction="#handleWithoutCard" mnemonicParsing="true" prefWidth="140" />
+                        <Button fx:id="printButton" text="%patient.button.print" onAction="#handlePrintDetails" mnemonicParsing="true" prefWidth="140" />
+                        <Button fx:id="outputsButton" text="%patient.button.outputs" onAction="#handleViewOutputs" mnemonicParsing="true" prefWidth="140" />
+                        <Button fx:id="editButton" text="%patient.button.edit" onAction="#handleEditPatient" mnemonicParsing="true" prefWidth="140" />
                     </children>
                 </FlowPane>
             </children>
@@ -91,7 +91,7 @@
             <children>
                 <VBox VBox.vgrow="ALWAYS">
                     <children>
-                        <Label text="%patient.table.examined.title">
+                        <Label fx:id="patientTableLabel" text="%patient.table.examined.title">
                             <font><Font size="18.0" /></font>
                         </Label>
                         <TableView fx:id="examinedTable1" VBox.vgrow="ALWAYS">
@@ -111,7 +111,7 @@
 
                 <VBox VBox.vgrow="ALWAYS">
                     <children>
-                        <Label text="%patient.table.scheduled.title">
+                        <Label fx:id="scheduledLabel" text="%patient.table.scheduled.title">
                             <font><Font size="18.0" /></font>
                         </Label>
                         <TableView fx:id="scheduledTable" VBox.vgrow="ALWAYS">

@@ -7,8 +7,18 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import org.medirec.medirec.backend.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class PatientInfoController {
+	// Logger
+	private static final Logger logger = LoggerFactory.getLogger(PatientInfoController.class);
+	//User session
+	private User user;
 
 	@FXML
 	private ListView<String> patientListView;
@@ -31,14 +41,73 @@ public class PatientInfoController {
 
 	@FXML
 	private HBox root;
+	@FXML
+	private Label patientsListLabel;
+	@FXML
+	private Label patientDetailsLabel;
+	@FXML
+	private Label patientNameLabel;
+	@FXML
+	private Label patientRCLabel;
+	@FXML
+	private Label patientInsuranceLabel;
+	@FXML
+	private Label patientBirthLabel;
+	@FXML
+	private Label patientCityLabel;
+	@FXML
+	private Label patientStreetLabel;
+	@FXML
+	private Label patientZipLabel;
+	@FXML
+	private Label patientLastExamLabel;
+	@FXML
+	private Label patientCheckLabel;
+	@FXML
+	private Button newCardButton;
+	@FXML
+	private Button deleteCardButton;
+	@FXML
+	private Button searchButton;
+	@FXML
+	private Button functionsButton;
+	@FXML
+	private Button withoutCardButton;
+	@FXML
+	private Button printButton;
+	@FXML
+	private Button outputsButton;
+	@FXML
+	private Button editButton;
+	@FXML
+	private Label patientTableLabel;
+	@FXML
+	private TableColumn<Patient, String> examinedTableTime;
+	@FXML
+	private TableColumn<Patient, String> examinedTableName;
+	@FXML
+	private TableColumn<Patient, String> examinedTableBirthNumber;
+	@FXML
+	private Label scheduledLabel;
+	@FXML
+	private TableColumn<Patient, String> scheduledTableTime;
+	@FXML
+	private TableColumn<Patient, String> scheduledTableName;
+	@FXML
+	private TableColumn<Patient, String> scheduledTableBirthNumber;
 
 	private final ObservableList<String> patients =
 		FXCollections.observableArrayList();
+
+	// Locale
+	private Locale currentLocale = Locale.getDefault();
 
 	public void initialize() {
 		setupPatients();
 		setupTableColumns();
 		initializeButtons();
+		currentLocale = AppSettings.getLocale();
+		updateUILanguage(currentLocale);
 	}
 
 	//buttony pre fungovanie ctrl + klavesa
@@ -177,5 +246,114 @@ public class PatientInfoController {
 		// Umožní upraviť údaje aktuálneho pacienta
 		// Po úprave a uložení sa data aktualizujú aj na UI
 
+	}
+
+	protected void onLanguageSwitch(){
+		// Toggle to local
+		Locale current = AppSettings.getLocale();
+		Locale next = current.getLanguage().equals("sk") ? Locale.ENGLISH : new Locale("sk", "SK");
+		AppSettings.setLocale(next);
+
+		// Updating the UI text without needing to reload the pane
+		updateUILanguage(next);
+	}
+
+	protected void updateUILanguage(Locale locale) {
+		try {
+			// Getting the new resource bundle
+			ResourceBundle newBundle = ResourceBundle.getBundle("org.medirec.medirec.frontend.messages", locale);
+			if (patientsListLabel != null) {
+				patientsListLabel.setText(newBundle.getString("patient.list.title"));
+			}
+			if (patientDetailsLabel != null) {
+				patientDetailsLabel.setText(newBundle.getString("patient.details.title"));
+			}
+			if (patientNameLabel != null) {
+				patientNameLabel.setText(newBundle.getString("patient.label.name"));
+			}
+			if (patientRCLabel != null) {
+				patientRCLabel.setText(newBundle.getString("patient.label.rc"));
+			}
+			if (patientInsuranceLabel != null) {
+				patientInsuranceLabel.setText(newBundle.getString("patient.label.insurance"));
+			}if (patientBirthLabel != null) {
+				patientBirthLabel.setText(newBundle.getString("patient.label.birth"));
+			}
+			if (patientCityLabel != null){
+				patientCityLabel.setText(newBundle.getString("patient.label.city"));
+			}
+			if (patientStreetLabel != null) {
+				patientStreetLabel.setText(newBundle.getString("patient.label.street"));
+			}
+			if (patientZipLabel != null) {
+				patientZipLabel.setText(newBundle.getString("patient.label.zip"));
+			}
+			if (patientLastExamLabel != null) {
+				patientLastExamLabel.setText(newBundle.getString("patient.label.lastExam"));
+			}
+			if (patientCheckLabel != null) {
+				patientCheckLabel.setText(newBundle.getString("patient.label.check"));
+			}
+			if (newCardButton != null) {
+				newCardButton.setText(newBundle.getString("patient.label.newCard"));
+			}
+			if (deleteCardButton != null) {
+				deleteCardButton.setText(newBundle.getString("patient.label.deleteCard"));
+			}
+			if (searchButton != null){
+				searchButton.setText(newBundle.getString("patient.label.search"));
+			}
+			if (functionsButton != null){
+				functionsButton.setText(newBundle.getString("patient.label.functions"));
+			}
+			if (withoutCardButton != null){
+				withoutCardButton.setText(newBundle.getString("patient.label.withoutCard"));
+			}
+			if (printButton != null){
+				printButton.setText(newBundle.getString("patient.label.print"));
+			}
+			if (outputsButton != null){
+				outputsButton.setText(newBundle.getString("patient.label.outputs"));
+			}
+			if (editButton != null){
+				editButton.setText(newBundle.getString("patient.label.edit"));
+			}
+			if (patientTableLabel != null){
+				patientTableLabel.setText(newBundle.getString("patient.table.examined.title"));
+			}
+			if (examinedTableName != null){
+				examinedTableName.setText(newBundle.getString("patient.table.column.name"));
+			}
+			if (examinedTableTime != null){
+				examinedTableTime.setText(newBundle.getString("patient.table.column.time"));
+			}
+			if (examinedTableBirthNumber != null){
+				examinedTableBirthNumber.setText(newBundle.getString("patient.table.column.rc"));
+			}
+			if (scheduledLabel != null){
+				scheduledLabel.setText(newBundle.getString("patient.table.scheduled.title"));
+			}
+			if (scheduledTableTime != null){
+				scheduledTableTime.setText(newBundle.getString("patient.table.column.time"));
+			}
+			if (scheduledTableName != null){
+				scheduledTableName.setText(newBundle.getString("patient.table.column.name"));
+			}
+			if (scheduledTableBirthNumber != null){
+				scheduledTableBirthNumber.setText(newBundle.getString("patient.table.column.rc"));
+			}
+		}catch (java.util.MissingResourceException e){
+			logger.error("Missing resource key: {}", e.getKey());
+		}catch (Exception e) {
+			logger.error("Failed to update UI language", e);
+		}
+	}
+
+	protected User getUser() {
+		return this.user;
+	}
+
+	protected void setUser(User user) {
+		this.user = user;
 	}
 }

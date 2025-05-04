@@ -10,8 +10,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import org.medirec.medirec.backend.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SettingsController implements Initializable {
+	// Logger
+	private static final Logger logger = LoggerFactory.getLogger(SettingsController.class);
+	//User session
+	private User user;
 
 	@FXML
 	private TextField usernameField;
@@ -39,8 +46,19 @@ public class SettingsController implements Initializable {
 
 	@FXML
 	private TextField doctorCodeField;
+	@FXML
+	private Label addUserLabel;
+	@FXML
+	private Label roleLabel;
+	@FXML
+	private Label assignDoctorLabel;
+	@FXML
+	private Button addUserButton;
 
 	private ResourceBundle bundle;
+
+	// Locale
+	private Locale currentLocale = Locale.getDefault();
 
 	private final ObservableList<String> doctorNames =
 		FXCollections.observableArrayList(
@@ -62,6 +80,9 @@ public class SettingsController implements Initializable {
 
 		// Presunuté sem – teraz bude doctorList už inicializovaný
 		handleRoleChange();
+
+		currentLocale = AppSettings.getLocale();
+		updateUILanguage(currentLocale);
 	}
 
 	private void initRoleChoiceBox() {
@@ -215,5 +236,64 @@ public class SettingsController implements Initializable {
 		System.out.println(
 			"✅ Všetky údaje sú v poriadku, používateľ môže byť pridaný."
 		);
+	}
+
+	protected void onLanguageSwitch(){
+		// Toggle to local
+		Locale current = AppSettings.getLocale();
+		Locale next = current.getLanguage().equals("sk") ? Locale.ENGLISH : new Locale("sk", "SK");
+		AppSettings.setLocale(next);
+
+		// Updating the UI text without needing to reload the pane
+		updateUILanguage(next);
+	}
+
+	protected void updateUILanguage(Locale locale) {
+		try {
+			// Getting the new resource bundle
+			ResourceBundle newBundle = ResourceBundle.getBundle("org.medirec.medirec.frontend.messages", locale);
+			if (addUserLabel != null) {
+				addUserLabel.setText(newBundle.getString("add.user.label"));
+			}
+			if(usernameField != null) {
+				usernameField.setPromptText(newBundle.getString("username.prompt"));
+			}
+			if(emailField != null) {
+				emailField.setPromptText(newBundle.getString("email"));
+			}
+			if(passwordField != null) {
+				passwordField.setPromptText(newBundle.getString("password.prompt"));
+			}
+			if(roleLabel != null) {
+				roleLabel.setText(newBundle.getString("role.label"));
+			}
+			if(specializationField != null) {
+				specializationField.setPromptText(newBundle.getString("specialization.prompt"));
+			}
+			if(doctorCodeField != null) {
+				doctorCodeField.setPromptText(newBundle.getString("doctorcode.prompt"));
+			}
+			if(assignDoctorLabel != null) {
+				assignDoctorLabel.setText(newBundle.getString("assign.doctor.label"));
+			}
+			if(doctorSelectComboBox != null) {
+				doctorSelectComboBox.setPromptText(newBundle.getString("select.doctor.prompt"));
+			}
+			if(addUserButton != null) {
+				addUserButton.setText(newBundle.getString("add.user.label"));
+			}
+		}catch (java.util.MissingResourceException e){
+			logger.error("Missing resource key: {}", e.getKey());
+		}catch (Exception e) {
+			logger.error("Failed to update UI language", e);
+		}
+	}
+
+	protected User getUser() {
+		return this.user;
+	}
+
+	protected void setUser(User user) {
+		this.user = user;
 	}
 }

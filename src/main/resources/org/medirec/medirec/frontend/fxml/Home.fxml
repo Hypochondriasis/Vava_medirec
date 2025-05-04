@@ -37,7 +37,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                <children>
-                  <Label text="%main.dayOverviewTitle">
+                  <Label fx:id="dayOverviewLabel" text="%main.dayOverviewTitle">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -53,7 +53,7 @@
                      <children>
                         <HBox fx:id="currentVisitHolder" alignment="CENTER" prefHeight="100.0" prefWidth="210.0" spacing="10.0" style="-fx-background-color: #ebf2fa;">
                            <children>
-                              <Label text="%main.todaysVisits" />
+                              <Label fx:id="todaysVisitsLabel" text="%main.todaysVisits" />
                               <Label fx:id="currentVisitTextArea" alignment="CENTER" styleClass="dashboard-number" text="5" />
                            </children>
                            <padding>
@@ -64,7 +64,7 @@
                   </VBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="210.0" spacing="10.0" style="-fx-background-color: #ebf2fa;">
                      <children>
-                        <Label text="%main.completedPatients" />
+                        <Label fx:id="completedPatientsLabel" text="%main.completedPatients" />
                         <Label fx:id="completedPatientsTextArea" alignment="CENTER" styleClass="dashboard-number" text="5" />
                      </children>
                      <padding>
@@ -73,7 +73,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="210.0" spacing="10.0" style="-fx-background-color: #ebf2fa;">
                      <children>
-                        <Label text="%main.waitingPatients" />
+                        <Label fx:id="waitingPatientsLabel" text="%main.waitingPatients" />
                         <Label fx:id="waitingPatientsTextArea" alignment="CENTER" styleClass="dashboard-number" text="5" />
                      </children>
                      <padding>
@@ -82,7 +82,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="210.0" spacing="10.0" style="-fx-background-color: #ebf2fa;">
                      <children>
-                        <Label text="%main.newRecords" />
+                        <Label fx:id="newRecordsLabel" text="%main.newRecords" />
                         <Label fx:id="newRecordsTextArea" alignment="CENTER" styleClass="dashboard-number" text="5" />
                      </children>
                      <padding>
@@ -100,7 +100,7 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
                <children>
-                  <Label text="%main.todaysExaminations">
+                  <Label fx:id="todaysExaminationsLabel" text="%main.todaysExaminations">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -113,7 +113,7 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
                <children>
-                  <Label text="%main.todaysTasks">
+                  <Label fx:id="todaysTasksLabel" text="%main.todaysTasks">
                      <font>
                         <Font size="18.0" />
                      </font>

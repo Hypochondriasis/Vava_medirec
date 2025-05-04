@@ -52,23 +52,23 @@
             </HBox>
             <FlowPane fx:id="legendRow" alignment="CENTER_LEFT" hgap="10.0" prefHeight="100.0" prefWidth="200.0" vgap="15.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label styleClass="legend-title" text="%calendar.legend" />
+                  <Label fx:id="legendLabel" styleClass="legend-title" text="%calendar.legend" />
                   <HBox alignment="CENTER_LEFT" spacing="10">
                      <children>
                         <Label style="-fx-background-color: #3366cc;" styleClass="legend-dot consultation" text="●" textFill="#3366cc" />
-                        <Label styleClass="legend-label" text="%calendar.consultation" />
+                        <Label fx:id="consultationLabel" styleClass="legend-label" text="%calendar.consultation" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" spacing="10">
                      <children>
                         <Label style="-fx-background-color: #cc3333;" styleClass="legend-dot urgent" text="●" textFill="#cc3333" />
-                        <Label styleClass="legend-label" text="%calendar.urgent" />
+                        <Label fx:id="urgentLabel" styleClass="legend-label" text="%calendar.urgent" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" spacing="10">
                      <children>
                         <Label style="-fx-background-color: #f1c40f;" styleClass="legend-dot examination" text="●" textFill="#f1c40f" />
-                        <Label styleClass="legend-label" text="%calendar.examination" />
+                        <Label fx:id="examinationLabel" styleClass="legend-label" text="%calendar.examination" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" spacing="10" />
@@ -87,13 +87,13 @@
                <children>
                   <HBox fx:id="dayHeaderRow" alignment="CENTER" minWidth="40.0" prefHeight="40.0" prefWidth="1066.0" spacing="10">
                      <children>
-                        <Label styleClass="day-header" text="%calendar.day.mo" />
-                        <Label styleClass="day-header" text="%calendar.day.tu" />
-                        <Label styleClass="day-header" text="%calendar.day.we" />
-                        <Label styleClass="day-header" text="%calendar.day.th" />
-                        <Label styleClass="day-header" text="%calendar.day.fr" />
-                        <Label styleClass="day-header" text="%calendar.day.sa" />
-                        <Label styleClass="day-header" text="%calendar.day.su" />
+                        <Label fx:id="monLabel" styleClass="day-header" text="%calendar.day.mo" />
+                        <Label fx:id="tueLabel" styleClass="day-header" text="%calendar.day.tu" />
+                        <Label fx:id="wenLabel" styleClass="day-header" text="%calendar.day.we" />
+                        <Label fx:id="thuLabel" styleClass="day-header" text="%calendar.day.th" />
+                        <Label fx:id="friLabel" styleClass="day-header" text="%calendar.day.fr" />
+                        <Label fx:id="satLabel" styleClass="day-header" text="%calendar.day.sa" />
+                        <Label fx:id="sunLabel" styleClass="day-header" text="%calendar.day.su" />
                      </children>
                   </HBox>
                   <GridPane fx:id="calendarGrid" alignment="CENTER" hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="519.0" prefWidth="964.0" vgap="10.0">

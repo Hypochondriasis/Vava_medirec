@@ -2,11 +2,21 @@ package org.medirec.medirec.frontend.controller;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import org.medirec.medirec.backend.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PatientCartController {
+	// Logger
+	private static final Logger logger = LoggerFactory.getLogger(PatientCartController.class);
+	//User session
+	private User user;
 
 	private Patient currentPatient;
 
@@ -60,6 +70,42 @@ public class PatientCartController {
 
 	@FXML
 	private TextField newDiagnosisField;
+	@FXML
+	private Label patientCartLabel;
+	@FXML
+	private Button newRecordButton;
+	@FXML
+	private TitledPane infoTitledPane;
+	@FXML
+	private Label birthdateLabel;
+	@FXML
+	private Label numberLabel;
+	@FXML
+	private Label addressLabel;
+	@FXML
+	private Label phoneLabel;
+	@FXML
+	private Label lastVisitLabel;
+	@FXML
+	private Label bloodTypeLabel;
+	@FXML
+	private Label nextVisitLabel;
+	@FXML
+	private Label emailLabel;
+	@FXML
+	private TitledPane healthInfoTitledPane;
+	@FXML
+	private Label pressureLabel;
+	@FXML
+	private Label weightLabel;
+	@FXML
+	private Label heightLabel;
+	@FXML
+	private Label bmiLabel;
+	@FXML
+	private Label allergiesLabel;
+	@FXML
+	private TitledPane chronicTitledPane;
 
 	@FXML
 	private void handleAddDiagnosis() {
@@ -212,5 +258,76 @@ public class PatientCartController {
         System.out.println("Diagnózy: " + diagnoses);
 
          */
+	}
+
+	protected void updateUILanguage(Locale locale) {
+		try {
+			// Getting the new resource bundle
+			ResourceBundle newBundle = ResourceBundle.getBundle("org.medirec.medirec.frontend.messages", locale);
+			if (patientCartLabel != null) {
+				patientCartLabel.setText(newBundle.getString("patient.cart"));
+			}
+			if (newRecordButton != null) {
+				newRecordButton.setText(newBundle.getString("edit.record"));
+			}
+			if (infoTitledPane != null) {
+				infoTitledPane.setText(newBundle.getString("personal.info"));
+			}
+			if (birthdateLabel != null) {
+				birthdateLabel.setText(newBundle.getString("birth.date"));
+			}
+			if (numberLabel != null) {
+				numberLabel.setText(newBundle.getString("id.number"));
+			}
+			if (addressLabel != null) {
+				addressLabel.setText(newBundle.getString("address"));
+			}
+			if (phoneLabel != null) {
+				phoneLabel.setText(newBundle.getString("phone"));
+			}
+			if (lastVisitLabel != null) {
+				lastVisitLabel.setText(newBundle.getString("last.visit"));
+			}
+			if (bloodTypeLabel != null) {
+				bloodTypeLabel.setText(newBundle.getString("blood.type"));
+			}
+			if (nextVisitLabel != null) {
+				nextVisitLabel.setText(newBundle.getString("next.visit"));
+			}
+			if (emailLabel != null) {
+				emailLabel.setText(newBundle.getString("email"));
+			}
+			if (healthInfoTitledPane != null) {
+				healthInfoTitledPane.setText(newBundle.getString("health.info"));
+			}
+			if (pressureLabel != null) {
+				pressureLabel.setText(newBundle.getString("pressure"));
+			}
+			if (weightLabel != null) {
+				weightLabel.setText(newBundle.getString("weight"));
+			}
+			if (heightLabel != null) {
+				heightLabel.setText(newBundle.getString("height"));
+			}
+			if (bmiLabel != null) {
+				bmiLabel.setText(newBundle.getString("bmi"));
+			}
+			if (allergiesLabel != null) {
+				allergiesLabel.setText(newBundle.getString("allergies"));
+			}
+			if (newAllergyField != null) {
+				newAllergyField.setText(newBundle.getString("add.new.alergie"));
+			}
+			if (chronicTitledPane != null) {
+				chronicTitledPane.setText(newBundle.getString("name.label"));
+			}
+			if (newDiagnosisField != null) {
+				newDiagnosisField.setText(newBundle.getString("add.new.diagnosis"));
+			}
+		}catch (java.util.MissingResourceException e){
+			logger.error("Missing resource key: {}", e.getKey());
+		}catch (Exception e) {
+			logger.error("Failed to update UI language", e);
+		}
 	}
 }

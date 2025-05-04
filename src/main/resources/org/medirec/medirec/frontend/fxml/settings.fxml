@@ -15,7 +15,7 @@
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <Label text="%add.user.label">
+    <Label fx:id="addUserLabel" text="%add.user.label">
         <font>
             <Font size="20.0" />
         </font>
@@ -27,7 +27,7 @@
 
     <!-- Rola -->
     <HBox spacing="10" alignment="CENTER_LEFT">
-        <Label text="%role.label" />
+        <Label fx:id="roleLabel" text="%role.label" />
         <ChoiceBox fx:id="roleChoiceBox" prefWidth="200.0" onAction="#handleRoleChange" />
     </HBox>
 
@@ -39,7 +39,7 @@
 
     <!-- Sekcia pre sestričku -->
     <VBox fx:id="nurseFields" spacing="10" visible="false" managed="false">
-        <Label text="%assign.doctor.label" />
+        <Label fx:id="assignDoctorLabel" text="%assign.doctor.label" />
         <ComboBox fx:id="doctorSelectComboBox" promptText="%select.doctor.prompt" prefWidth="200" editable="true" />
     </VBox>
 

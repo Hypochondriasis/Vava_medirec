@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import org.medirec.medirec.backend.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.text.MessageFormat;
@@ -19,15 +22,44 @@ import java.time.format.DateTimeParseException;
 import java.util.*;
 
 public class CalendarController {
+    // Logger
+    private static final Logger logger = LoggerFactory.getLogger(CalendarController.class);
+    //User session
+    private User user;
     @FXML private HBox dayHeaderRow;
     @FXML private GridPane calendarGrid;
     @FXML private Label monthLabel;
     @FXML private Button prevMonthButton, nextMonthButton, newAppointmentButton;
     @FXML private ToggleButton dayViewButton, weekViewButton, monthViewButton;
     @FXML private ScrollPane calendarScrollPane;
+    @FXML
+    private Label calendarTitle;
+    @FXML
+    private Label consultationLabel;
+    @FXML
+    private Label legendLabel;
+    @FXML
+    private Label urgentLabel;
+    @FXML
+    private Label examinationsLabel;
+    @FXML
+    private Label monLabel;
+    @FXML
+    private Label tueLabel;
+    @FXML
+    private Label wenLabel;
+    @FXML
+    private Label thuLabel;
+    @FXML
+    private Label friLabel;
+    @FXML
+    private Label satLabel;
+    @FXML
+    private Label sunLabel;
 
     private YearMonth currentYearMonth;
-    private final Locale SK_LOCALE = new Locale("sk");
+    // Locale
+    private Locale currentLocale = Locale.getDefault();
     private final Map<LocalDate, List<Appointment>> appointments = new HashMap<>();
 
 
@@ -38,6 +70,8 @@ public class CalendarController {
         setupGridLayout();
         updateCalendar();
         updateMonthLabel();
+        currentLocale = AppSettings.getLocale();
+        updateUILanguage(currentLocale);
     }
 
     private void setupDayHeaderRow() {
@@ -363,6 +397,83 @@ public class CalendarController {
     @FXML
     private void handleWeek() {
         //neviem co presne treba
+    }
+
+    protected void onLanguageSwitch(){
+        // Toggle to local
+        Locale current = AppSettings.getLocale();
+        Locale next = current.getLanguage().equals("sk") ? Locale.ENGLISH : new Locale("sk", "SK");
+        AppSettings.setLocale(next);
+
+        // Updating the UI text without needing to reload the pane
+        updateUILanguage(next);
+    }
+
+    protected void updateUILanguage(Locale locale) {
+        try {
+            // Getting the new resource bundle
+            ResourceBundle newBundle = ResourceBundle.getBundle("org.medirec.medirec.frontend.messages", locale);
+            if (calendarTitle != null) {
+                calendarTitle.setText(newBundle.getString("calendar.title"));
+            }
+            if (newAppointmentButton != null) {
+                newAppointmentButton.setText(newBundle.getString("calendar.newAppointment"));
+            }
+            if (dayViewButton != null) {
+                dayViewButton.setText(newBundle.getString("calendar.day"));
+            }
+            if (weekViewButton != null) {
+                weekViewButton.setText(newBundle.getString("calendar.week"));
+            }
+            if (monthViewButton != null) {
+                monthViewButton.setText(newBundle.getString("calendar.month"));
+            }
+            if (legendLabel != null) {
+                legendLabel.setText(newBundle.getString("calendar.legend"));
+            }
+            if (consultationLabel != null) {
+                consultationLabel.setText(newBundle.getString("calendar.consultation"));
+            }
+            if (urgentLabel != null) {
+                urgentLabel.setText(newBundle.getString("calendar.urgent"));
+            }
+            if (examinationsLabel != null) {
+                examinationsLabel.setText(newBundle.getString("calendar.examination"));
+            }
+            if (monLabel != null) {
+                monLabel.setText(newBundle.getString("calendar.day.mon"));
+            }
+            if (tueLabel != null) {
+                tueLabel.setText(newBundle.getString("calendar.day.tue"));
+            }
+            if (wenLabel != null) {
+                wenLabel.setText(newBundle.getString("calendar.day.wen"));
+            }
+            if (thuLabel != null) {
+                thuLabel.setText(newBundle.getString("calendar.day.thu"));
+            }
+            if (friLabel != null) {
+                friLabel.setText(newBundle.getString("calendar.day.fri"));
+            }
+            if (satLabel != null) {
+                satLabel.setText(newBundle.getString("calendar.day.sat"));
+            }
+            if (sunLabel != null) {
+                sunLabel.setText(newBundle.getString("calendar.day.sun"));
+            }
+        }catch (java.util.MissingResourceException e){
+            logger.error("Missing resource key: {}", e.getKey());
+        }catch (Exception e) {
+            logger.error("Failed to update UI language", e);
+        }
+    }
+
+    protected User getUser() {
+        return this.user;
+    }
+
+    protected void setUser(User user) {
+        this.user = user;
     }
 
 }

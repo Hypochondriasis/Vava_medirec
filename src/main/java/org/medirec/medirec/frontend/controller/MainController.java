@@ -51,7 +51,15 @@ public class MainController {
 	@FXML
 	private Label settingsLabel;
 
+	// Locale
 	private Locale currentLocale = Locale.getDefault();
+
+	// Controller for all the possible loaded fxml files
+	private HomeController homeController = null;
+	private SettingsController settingsController = null;
+	private CalendarController calendarController = null;
+	private PatientInfoController patientInfoController = null;
+	private MedicalRecordsController medicalRecordsController = null;
 
 	@FXML
 	public void initialize() {
@@ -66,6 +74,8 @@ public class MainController {
 
 	public void setUserInfo() {
 		try{
+			//Hiding the settings label from non-admin users
+            settingsLabel.setVisible(user.getRole().getName().equals("Admin"));
 			//Getting the Doctor info
 			user.setDoctor(DatabaseService.getOne(Doctor.class, user.getDoctor_id()));
 			//Getting the medical records
@@ -116,13 +126,62 @@ public class MainController {
 		try {
 			System.out.println("Loading: " + fxmlPath);
 			FXMLLoader loader = new FXMLLoader(
-				getClass().getResource("/org/medirec/medirec/frontend/fxml/" + fxmlPath),
-				resources
+					getClass().getResource("/org/medirec/medirec/frontend/fxml/" + fxmlPath),
+					resources
 			);
 			Node content = loader.load();
 			mainContent.getChildren().setAll(content);
+
+			// Access the controller
+			Object controller = loader.getController();
+
+			if (controller instanceof HomeController) {
+				this.homeController = (HomeController) controller;
+				this.homeController.setUser(this.user);
+				this.settingsController = null;
+				this.calendarController = null;
+				this.patientInfoController = null;
+				this.medicalRecordsController = null;
+			}
+			if (controller instanceof SettingsController) {
+				this.settingsController = (SettingsController) controller;
+				this.settingsController.setUser(this.user);
+				this.homeController = null;
+				this.calendarController = null;
+				this.patientInfoController = null;
+				this.medicalRecordsController = null;
+			}
+			if (controller instanceof CalendarController) {
+				this.calendarController = (CalendarController) controller;
+				this.calendarController.setUser(this.user);
+				this.homeController = null;
+				this.settingsController = null;
+				this.patientInfoController = null;
+				this.medicalRecordsController = null;
+			}
+			if (controller instanceof PatientInfoController) {
+				this.patientInfoController = (PatientInfoController) controller;
+				this.patientInfoController.setUser(this.user);
+				this.homeController = null;
+				this.settingsController = null;
+				this.calendarController = null;
+				this.medicalRecordsController = null;
+			}
+			if (controller instanceof MedicalRecordsController) {
+				this.medicalRecordsController = (MedicalRecordsController) controller;
+				this.medicalRecordsController.setUser(this.user);
+				this.homeController = null;
+				this.settingsController = null;
+				this.calendarController = null;
+				this.patientInfoController = null;
+			}
+			// You can now interact with the controller, for example:
+			// if (controller instanceof HomeController) {
+			//     ((HomeController) controller).initializeData();
+			// }
+
 		} catch (IOException e) {
-			System.err.println("Chyba pri načítaní FXML: " + fxmlPath);
+			logger.debug("Error loading FXML: " + fxmlPath + "\n");
 			e.printStackTrace();
 		}
 	}
@@ -162,6 +221,21 @@ public class MainController {
 
 		// Updating the UI text without needing to reload the pane
 		updateUILanguage(next);
+		if (homeController != null) {
+			homeController.updateUILanguage(next);
+		}
+		if (settingsController != null) {
+			settingsController.updateUILanguage(next);
+		}
+		if (calendarController != null) {
+			calendarController.updateUILanguage(next);
+		}
+		if (patientInfoController != null) {
+			patientInfoController.updateUILanguage(next);
+		}
+		if (medicalRecordsController != null) {
+			medicalRecordsController.updateUILanguage(next);
+		}
 	}
 
 	private void updateUILanguage(Locale locale) {

@@ -20,7 +20,7 @@
 <VBox prefHeight="720.0" prefWidth="720.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.medirec.medirec.frontend.controller.PatientCartController">
 
     <HBox alignment="CENTER_RIGHT">
-        <Label text="%patient.cart">
+        <Label fx:id="patientCartLabel" text="%patient.cart">
             <font>
                 <Font size="18.0" />
             </font>
@@ -31,30 +31,30 @@
 
     <Separator />
 
-    <TitledPane expanded="true" text="%personal.info">
+    <TitledPane fx:id="infoTitledPane" expanded="true" text="%personal.info">
         <GridPane alignment="CENTER" hgap="10.0" prefWidth="500.0" style="-fx-background-color: #ffffff;" vgap="10.0">
-            <Label text="%birth.date" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="birthdateLabel" text="%birth.date" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField fx:id="birthDateField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-            <Label text="%id.number" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Label fx:id="numberLabel" text="%id.number" GridPane.columnIndex="2" GridPane.rowIndex="0" />
             <TextField fx:id="idNumberField" GridPane.columnIndex="3" GridPane.rowIndex="0" />
 
-            <Label text="%address" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label fx:id="addressLabel" text="%address" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-            <Label text="%phone" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="phoneLabel" text="%phone" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <TextField fx:id="phoneField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
 
-            <Label text="%last.visit" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label fx:id="lastVisitLabel" text="%last.visit" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <TextField fx:id="lastVisitField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-            <Label text="%blood.type" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label fx:id="bloodTypeLabel" text="%blood.type" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <TextField fx:id="bloodTypeField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
 
-            <Label text="%next.visit" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label fx:id="nextVisitLabel" text="%next.visit" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <TextField fx:id="nextVisitField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-            <Label text="%email" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="emailLabel" text="%email" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <TextField fx:id="emailField" GridPane.columnIndex="3" GridPane.rowIndex="3" />
 
             <columnConstraints>
@@ -84,21 +84,21 @@
     <HBox prefHeight="300.0" spacing="10" VBox.vgrow="ALWAYS">
         <ScrollPane fx:id="healthScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="287.0" prefWidth="300.0">
             <content>
-                <TitledPane expanded="true" text="%health.info">
+                <TitledPane fx:id="healthInfoTitledPane" expanded="true" text="%health.info">
                     <GridPane hgap="10.0" vgap="10.0">
-                        <Label text="%pressure" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label fx:id="pressureLabel" text="%pressure" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                         <TextField fx:id="pressureField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                        <Label text="%weight" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label fx:id="weightLabel" text="%weight" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                         <TextField fx:id="weightField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                        <Label text="%height" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label fx:id="heightLabel" text="%height" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                         <TextField fx:id="heightField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                        <Label text="%bmi" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label fx:id="bmiLabel" text="%bmi" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                         <TextField fx:id="bmiField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-                        <Label alignment="TOP_LEFT" text="%allergies" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label fx:id="allergiesLabel" alignment="TOP_LEFT" text="%allergies" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                         <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="4">
                             <HBox spacing="5">
                                 <TextField fx:id="newAllergyField" prefHeight="32.0" prefWidth="143.0" promptText="%add.new.alergie" HBox.hgrow="ALWAYS" />
@@ -131,7 +131,7 @@
         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
             <children>
 
-                <TitledPane expanded="true" text="%chronic.diagnoses" VBox.vgrow="ALWAYS">
+                <TitledPane fx:id="chronicTitledPane" expanded="true" text="%chronic.diagnoses" VBox.vgrow="ALWAYS">
                     <VBox spacing="10.0" style="-fx-background-color: #ffffff;">
                         <HBox spacing="5">
                             <TextField fx:id="newDiagnosisField" promptText="%add.new.diagnosis" HBox.hgrow="ALWAYS" />

@@ -3,6 +3,7 @@ package org.medirec.medirec.frontend.controller;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -11,8 +12,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.medirec.medirec.backend.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MedicalRecordsController {
+	// Logger
+	private static final Logger logger = LoggerFactory.getLogger(MedicalRecordsController.class);
+	//User session
+	private User user;
 
 	@FXML
 	private TextField searchField;
@@ -28,6 +36,17 @@ public class MedicalRecordsController {
 
 	@FXML
 	private VBox recordsContainer;
+	@FXML
+	private Button searchButton;
+	@FXML
+	private Button newRecordButton;
+	@FXML
+	private Button showPatientCardButton;
+	@FXML
+	private Label historyLabel;
+
+	// Locale
+	private Locale currentLocale = Locale.getDefault();
 
 	private Map<String, Patient> fakeDatabase = new HashMap<>();
 	private Patient currentPatient;
@@ -74,6 +93,8 @@ public class MedicalRecordsController {
 		// Pridanie do fake databázy
 		fakeDatabase.put("Ján Novák", p1);
 		// ak chceš, môžeš tu predvyplniť niečo na test
+		currentLocale = AppSettings.getLocale();
+		updateUILanguage(currentLocale);
 	}
 
 	@FXML
@@ -256,5 +277,52 @@ public class MedicalRecordsController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	protected void onLanguageSwitch(){
+		// Toggle to local
+		Locale current = AppSettings.getLocale();
+		Locale next = current.getLanguage().equals("sk") ? Locale.ENGLISH : new Locale("sk", "SK");
+		AppSettings.setLocale(next);
+
+		// Updating the UI text without needing to reload the pane
+		updateUILanguage(next);
+	}
+
+	protected void updateUILanguage(Locale locale) {
+		try {
+			// Getting the new resource bundle
+			ResourceBundle newBundle = ResourceBundle.getBundle("org.medirec.medirec.frontend.messages", locale);
+			if (searchField != null) {
+				searchField.setPromptText(newBundle.getString("enter.name"));
+			}
+			if (searchButton != null) {
+				searchButton.setText(newBundle.getString("search.button"));
+			}
+			if (nameLabel != null) {
+				nameLabel.setText(newBundle.getString("name.label"));
+			}
+			if (newRecordButton != null) {
+				newRecordButton.setText(newBundle.getString("new.record"));
+			}
+			if (showPatientCardButton != null){
+				showPatientCardButton.setText(newBundle.getString("show.patient.card"));
+			}
+			if (historyLabel != null){
+				historyLabel.setText(newBundle.getString("patient.history"));
+			}
+		}catch (java.util.MissingResourceException e){
+			logger.error("Missing resource key: {}", e.getKey());
+		}catch (Exception e) {
+			logger.error("Failed to update UI language", e);
+		}
+	}
+
+	protected User getUser() {
+		return this.user;
+	}
+
+	protected void setUser(User user) {
+		this.user = user;
 	}
 }
