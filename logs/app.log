@@ -5890,3 +5890,1743 @@ java.lang.NullPointerException: Cannot invoke "org.medirec.medirec.backend.model
 2025-05-04 20:02:45.422 [MyHikariCP:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Thread starvation or clock leap detected (housekeeper delta=59s852ms183µs).
 2025-05-04 20:02:45.422 [MyHikariCP:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Thread starvation or clock leap detected (housekeeper delta=59s851ms983µs).
 2025-05-04 20:03:11.133 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - Inserted new Patient with generated id=3
+2025-05-04 21:18:42.980 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:18:42.986 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:18:43.753 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@2230ceb5
+2025-05-04 21:18:43.754 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:18:43.754 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:18:43.803 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:18:43.833 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=xqPVhe2wmqqF-JjaVDS-SZcNrbMyKZnU9bYNsEpuGoyL_XwcFROuTw
+2025-05-04 21:18:43.872 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:18:43.872 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:18:44.228 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@62dc9dc3
+2025-05-04 21:18:44.229 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:18:44.229 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:18:44.263 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:18:44.263 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:18:44.302 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:18:44.447 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:18:44.496 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:18:44.532 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:18:44.581 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:18:44.626 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:18:44.660 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:18:44.705 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:18:44.740 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:18:44.796 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:18:44.836 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:18:44.876 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 21:18:44.924 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.NullPointerException: Cannot invoke "org.medirec.medirec.backend.model.User.getRole()" because "this.user" is null
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:220)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.initialize(HomeController.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2680)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.loadView(MainController.java:133)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.LoginController.handleLogin(LoginController.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:18:48.701 [JavaFX Application Thread] ERROR o.m.m.f.c.PatientInfoController - Missing resource key: patient.label.newCard
+2025-05-04 21:24:53.832 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:24:53.838 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:24:54.601 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@4521008b
+2025-05-04 21:24:54.603 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:24:54.603 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:24:54.649 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:24:54.657 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=9TS1Rx98PiwioaMuJYlg6QtrMh-odpQrpx6KEgrB5cL4L3E0gSMB1w
+2025-05-04 21:24:54.664 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:24:54.664 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:24:55.053 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@28959a0f
+2025-05-04 21:24:55.054 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:24:55.055 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:24:55.092 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:24:55.093 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:24:55.142 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:24:55.199 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:24:55.237 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:24:55.282 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:24:55.318 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:24:55.353 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:24:55.386 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:24:55.428 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:24:55.461 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:24:55.500 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:24:55.535 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:24:55.568 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 21:24:55.594 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.NullPointerException: Cannot invoke "org.medirec.medirec.backend.model.User.getRole()" because "this.user" is null
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:220)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.initialize(HomeController.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2680)
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2555)
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2523)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.loadView(MainController.java:133)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.LoginController.handleLogin(LoginController.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:25:53.038 [JavaFX Application Thread] ERROR o.m.m.f.c.PatientInfoController - Missing resource key: patient.label.deleteCard
+2025-05-04 21:30:10.357 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:30:10.365 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:30:11.121 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@4521008b
+2025-05-04 21:30:11.123 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:30:11.124 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:30:11.178 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:30:11.196 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=d0Mlbl1cuvAy_Dh6qnfvfvl2uG6P38cPkG0wAOnl1cuG5cMBYxVJJQ
+2025-05-04 21:30:11.204 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:30:11.204 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:30:11.591 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@28959a0f
+2025-05-04 21:30:11.592 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:30:11.592 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:30:11.627 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:30:11.627 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:30:11.670 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:30:11.732 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:30:11.767 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:30:11.806 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:30:11.841 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:30:11.875 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:30:11.919 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:30:11.956 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:30:12.004 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:30:12.038 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:30:12.073 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:30:12.105 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 21:30:18.521 [JavaFX Application Thread] ERROR o.m.m.f.c.PatientInfoController - Missing resource key: patient.label.search
+2025-05-04 21:31:20.832 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:31:20.838 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:31:21.525 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@4078c796
+2025-05-04 21:31:21.526 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:31:21.526 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:31:21.568 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:31:21.575 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=8fPz0Xc5XRo5G5HrXDoqQzrhyHxKP90ANCcGsDO14zEV_a2Qr_7Aog
+2025-05-04 21:31:21.581 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:31:21.581 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:31:21.936 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@763c914f
+2025-05-04 21:31:21.937 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:31:21.937 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:31:21.970 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:31:21.970 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:31:22.007 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:31:22.057 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:31:22.095 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:31:22.131 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:31:22.169 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:31:22.203 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:31:22.235 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:31:22.269 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:31:22.303 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:31:22.339 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:31:22.378 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:31:22.413 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 21:31:26.910 [JavaFX Application Thread] ERROR o.m.m.f.c.CalendarController - Missing resource key: calendar.day.mon
+2025-05-04 21:31:32.324 [JavaFX Application Thread] ERROR o.m.m.f.c.CalendarController - Missing resource key: calendar.day.mon
+2025-05-04 21:32:39.229 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:32:39.235 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:32:40.415 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@4521008b
+2025-05-04 21:32:40.417 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:32:40.418 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:32:40.498 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:32:40.509 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=RuHtbys28SS9M2-fMKzDbTxWnBT_iF-ZMUGN4uMrUTnbJ-Teml5Zww
+2025-05-04 21:32:40.518 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:32:40.518 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:32:41.042 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@28959a0f
+2025-05-04 21:32:41.042 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:32:41.042 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:32:41.093 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:32:41.094 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:32:41.158 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:32:41.252 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:32:41.311 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:32:41.375 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:32:41.432 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:32:41.490 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:32:41.791 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:32:41.837 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:32:41.901 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:32:42.214 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:32:42.279 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:32:42.355 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 21:32:53.035 [JavaFX Application Thread] INFO  o.m.m.f.controller.HomeController - Attempting to import a new patient...
+2025-05-04 21:32:55.683 [JavaFX Application Thread] INFO  o.m.m.f.controller.HomeController - File selection was canceled.
+2025-05-04 21:32:57.755 [JavaFX Application Thread] INFO  o.m.m.f.controller.HomeController - Attempting to import a new patient...
+2025-05-04 21:33:09.043 [JavaFX Application Thread] ERROR o.m.m.b.service.DatabaseService - Error in createOrUpdate for Patient [0]
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "Patient_pkey"
+  Detail: Key (id)=(1) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at com.zaxxer.hikari@6.3.0/com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari@6.3.0/com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.medirec.medirec/org.medirec.medirec.backend.service.DatabaseService.createOrUpdate(DatabaseService.java:180)
+	at org.medirec.medirec/org.medirec.medirec.backend.controller.DatabaseController.saveOrUpdatePatient(DatabaseController.java:278)
+	at org.medirec.medirec/org.medirec.medirec.backend.util.XMLImporter.importPatientFromXML(XMLImporter.java:134)
+	at org.medirec.medirec/org.medirec.medirec.backend.util.XMLImporter.importPatientFromXML(XMLImporter.java:42)
+	at org.medirec.medirec/org.medirec.medirec.backend.util.PatientImporter.importPatientFromXML(PatientImporter.java:26)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.onNewPatient(HomeController.java:171)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:33:09.046 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Error importing patient
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "Patient_pkey"
+  Detail: Key (id)=(1) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at com.zaxxer.hikari@6.3.0/com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari@6.3.0/com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.medirec.medirec/org.medirec.medirec.backend.service.DatabaseService.createOrUpdate(DatabaseService.java:180)
+	at org.medirec.medirec/org.medirec.medirec.backend.controller.DatabaseController.saveOrUpdatePatient(DatabaseController.java:278)
+	at org.medirec.medirec/org.medirec.medirec.backend.util.XMLImporter.importPatientFromXML(XMLImporter.java:134)
+	at org.medirec.medirec/org.medirec.medirec.backend.util.XMLImporter.importPatientFromXML(XMLImporter.java:42)
+	at org.medirec.medirec/org.medirec.medirec.backend.util.PatientImporter.importPatientFromXML(PatientImporter.java:26)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.onNewPatient(HomeController.java:171)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:34:21.741 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:34:21.748 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:34:22.598 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@4521008b
+2025-05-04 21:34:22.599 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:34:22.599 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:34:22.657 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:34:22.664 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=dHTD4NYNlShEnybJENv-GiQC3ruHrSgrdt5x9h79OXz6dJF7XCMwvg
+2025-05-04 21:34:22.671 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:34:22.671 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:34:23.363 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@28959a0f
+2025-05-04 21:34:23.363 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:34:23.363 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:34:23.398 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:34:23.398 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:34:23.444 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:34:23.503 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:34:23.553 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:34:23.601 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:34:23.648 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:34:23.696 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:34:23.730 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:34:23.764 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:34:23.797 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:34:23.832 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:34:23.866 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:34:23.900 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 21:47:19.846 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:47:19.851 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:47:20.766 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@25ac4fbb
+2025-05-04 21:47:20.767 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:47:20.767 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:47:20.860 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:47:20.879 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=CoekghSAfW2LsPAV9i4NSvByW3MwoCTLeS0Qlo3kdgNsu_Y7x9KR5A
+2025-05-04 21:47:20.887 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:47:20.888 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:47:21.781 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@70314670
+2025-05-04 21:47:21.782 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:47:21.782 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:47:21.840 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:47:21.840 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:47:21.879 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:47:21.943 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:47:21.979 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:47:22.025 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:47:22.062 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:47:22.096 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:47:22.143 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:47:22.182 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:47:22.223 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:47:22.264 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:47:22.301 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:47:22.335 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 21:47:22.385 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.setUser(HomeController.java:264)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.loadView(MainController.java:141)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.LoginController.handleLogin(LoginController.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:47:25.991 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:47:27.067 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:49:57.838 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:49:57.844 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:49:58.830 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@69e6a1d4
+2025-05-04 21:49:58.831 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:49:58.832 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:49:58.892 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:49:58.900 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=0KYWrqKzozkpSA1UmOD-0VVNhr87JAyODjflM3-pNCmFGK0E9YkCbg
+2025-05-04 21:49:58.910 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:49:58.911 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:49:59.263 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@461c754d
+2025-05-04 21:49:59.263 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:49:59.263 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:49:59.299 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:49:59.300 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:49:59.362 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:49:59.422 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:49:59.456 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:49:59.491 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:49:59.525 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:49:59.562 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:49:59.599 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:49:59.637 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:49:59.670 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:49:59.705 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:49:59.740 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:49:59.773 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 21:49:59.824 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.setUser(HomeController.java:264)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.loadView(MainController.java:141)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.LoginController.handleLogin(LoginController.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:07.891 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:08.345 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:08.656 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:09.192 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:09.576 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:09.992 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:10.385 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:10.848 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:11.233 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:11.688 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:50:12.008 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.onLanguageSwitch(MainController.java:226)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:52:39.218 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:52:39.223 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:52:39.910 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@55fb8370
+2025-05-04 21:52:39.911 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:52:39.911 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:52:39.952 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:52:39.962 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=C35401_GXFM3wkZLUk5Ua0-cchR14E6V-fV5YnfTh4qyWRy4QU0dzg
+2025-05-04 21:52:39.983 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:52:39.983 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:52:40.405 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@5189b605
+2025-05-04 21:52:40.406 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:52:40.406 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:52:40.456 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:52:40.457 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:52:40.496 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:52:40.628 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:52:40.700 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:52:40.748 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:52:40.786 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:52:40.823 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:52:40.879 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:52:40.934 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:52:40.969 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:52:41.023 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:52:41.062 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:52:41.096 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 21:52:41.131 [JavaFX Application Thread] ERROR o.m.m.f.controller.HomeController - Failed to update UI language
+java.lang.UnsupportedOperationException: ResourceBundle.Control not supported in named modules
+	at java.base/java.util.ResourceBundle.checkNamedModule(ResourceBundle.java:1540)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:1062)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.updateUILanguage(HomeController.java:223)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.HomeController.setUser(HomeController.java:264)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.MainController.loadView(MainController.java:141)
+	at org.medirec.medirec/org.medirec.medirec.frontend.controller.LoginController.handleLogin(LoginController.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3897)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1878)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-05-04 21:56:02.140 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:56:02.146 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:56:02.897 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@435d8ffe
+2025-05-04 21:56:02.899 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:56:02.899 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:56:02.947 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 21:56:02.955 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=kQURNBmk5YNQtybTcNvaVd5DK5hQKR4zmwSGLkltiqAxvdJCOgSwEw
+2025-05-04 21:56:02.964 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 21:56:02.965 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 21:56:03.402 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@bde0f9d
+2025-05-04 21:56:03.402 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 21:56:03.402 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 21:56:03.451 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 21:56:03.452 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 21:56:03.501 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 21:56:03.568 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 21:56:03.604 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 21:56:03.652 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:56:03.686 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 21:56:03.718 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 21:56:03.752 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 21:56:03.785 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 21:56:03.818 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 21:56:03.851 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 21:56:03.886 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 21:56:03.921 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 22:02:09.326 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:02:09.332 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:02:10.313 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@7e81d56a
+2025-05-04 22:02:10.315 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:02:10.316 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:02:10.365 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 22:02:10.374 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=zzrNLv9C4B67hu__28bUKsVIUMTNaQlDjQ3V68LRi6OXSSblRWUMUQ
+2025-05-04 22:02:10.380 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:02:10.380 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:02:11.009 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@a2b2263
+2025-05-04 22:02:11.010 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:02:11.010 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:02:11.078 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 22:02:11.078 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 22:02:11.154 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 22:02:11.248 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 22:02:11.308 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 22:02:11.376 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:02:11.443 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 22:02:11.503 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 22:02:11.576 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 22:02:11.641 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 22:02:11.684 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 22:02:11.745 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 22:02:11.810 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:02:11.870 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 22:04:07.024 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:04:07.030 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:04:07.715 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@31f2b31b
+2025-05-04 22:04:07.716 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:04:07.716 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:04:07.764 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 22:04:07.774 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=XpU6OjwBG9uOzVvI6XFDjFF33qGlTyDlQk06PKyGqw0tPHSwzw-2CA
+2025-05-04 22:04:07.781 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:04:07.782 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:04:08.133 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@14830f76
+2025-05-04 22:04:08.134 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:04:08.135 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:04:08.211 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 22:04:08.212 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 22:04:08.310 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 22:04:08.682 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 22:04:08.741 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 22:04:08.797 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:04:08.852 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 22:04:08.909 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 22:04:08.972 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 22:04:09.036 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 22:04:09.102 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 22:04:09.178 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 22:04:09.252 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:04:09.310 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 22:06:14.284 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:06:14.291 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:06:15.305 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@7e81d56a
+2025-05-04 22:06:15.306 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:06:15.307 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:06:15.384 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 22:06:15.391 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=_JLt6Gjpg272ujhspxocfJ4cNLHDdfj_6-klkAYxHCA1IXB2RBRlEQ
+2025-05-04 22:06:15.398 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:06:15.398 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:06:16.078 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@a2b2263
+2025-05-04 22:06:16.079 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:06:16.080 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:06:16.127 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 22:06:16.128 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 22:06:16.210 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 22:06:16.294 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 22:06:16.364 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 22:06:16.431 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:06:16.493 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 22:06:16.560 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 22:06:16.627 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 22:06:16.703 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 22:06:16.765 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 22:06:16.803 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 22:06:16.853 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:06:16.919 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 22:12:54.019 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:12:54.026 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:12:55.020 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@7e81d56a
+2025-05-04 22:12:55.021 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:12:55.021 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:12:55.068 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 22:12:55.076 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=pw4AJZRdSGLd6cNEB3tahiC9ZfvEvb7WOeAB_XEdwMRj7BrTVn6SiA
+2025-05-04 22:12:55.080 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:12:55.081 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:12:55.583 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@a2b2263
+2025-05-04 22:12:55.584 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:12:55.584 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:12:55.641 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 22:12:55.641 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 22:12:55.707 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 22:12:55.780 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 22:12:55.840 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 22:12:55.904 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:12:55.982 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 22:12:56.044 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 22:12:56.109 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 22:12:56.174 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 22:12:56.240 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 22:12:56.307 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 22:12:56.377 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:12:56.468 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 22:16:14.544 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:16:14.550 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:16:15.326 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@2085ec25
+2025-05-04 22:16:15.328 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:16:15.328 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:16:15.388 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 22:16:15.396 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=LCE85f4Ayhb0ap5VHJ-PuvmYDt8Hw2fJvi1_YXDBnSYbAT76SOk1ww
+2025-05-04 22:16:15.402 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:16:15.402 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:16:15.934 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@5b79d8d1
+2025-05-04 22:16:15.934 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:16:15.934 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:16:15.994 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 22:16:15.994 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 22:16:16.066 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 22:16:16.212 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 22:16:16.251 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 22:16:16.298 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:16:16.331 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 22:16:16.362 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 22:16:16.397 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 22:16:16.430 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 22:16:16.462 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 22:16:16.502 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 22:16:16.548 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:16:16.580 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-04 22:18:33.650 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:18:33.657 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:18:34.616 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@7d2d061e
+2025-05-04 22:18:34.619 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:18:34.619 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:18:34.689 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-04 22:18:34.701 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=6eLXZo7v93uOThDIFbEs7yj0QCUvd1p8uEyM3jq136B3oy3UxGr3NQ
+2025-05-04 22:18:34.722 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-04 22:18:34.722 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-04 22:18:35.290 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@763c914f
+2025-05-04 22:18:35.291 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-04 22:18:35.291 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-04 22:18:35.358 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-04 22:18:35.358 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-04 22:18:35.437 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-04 22:18:35.619 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-04 22:18:35.699 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-04 22:18:35.775 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:18:35.829 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-04 22:18:35.873 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-04 22:18:35.920 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-04 22:18:35.960 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-04 22:18:35.994 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-04 22:18:36.041 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from appointment where doctor_id=1
+2025-05-04 22:18:36.078 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-04 22:18:36.128 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1

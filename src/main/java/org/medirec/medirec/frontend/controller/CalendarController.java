@@ -441,25 +441,25 @@ public class CalendarController {
                 examinationsLabel.setText(newBundle.getString("calendar.examination"));
             }
             if (monLabel != null) {
-                monLabel.setText(newBundle.getString("calendar.day.mon"));
+                monLabel.setText(newBundle.getString("calendar.day.mo"));
             }
             if (tueLabel != null) {
-                tueLabel.setText(newBundle.getString("calendar.day.tue"));
+                tueLabel.setText(newBundle.getString("calendar.day.tu"));
             }
             if (wenLabel != null) {
-                wenLabel.setText(newBundle.getString("calendar.day.wen"));
+                wenLabel.setText(newBundle.getString("calendar.day.we"));
             }
             if (thuLabel != null) {
-                thuLabel.setText(newBundle.getString("calendar.day.thu"));
+                thuLabel.setText(newBundle.getString("calendar.day.th"));
             }
             if (friLabel != null) {
-                friLabel.setText(newBundle.getString("calendar.day.fri"));
+                friLabel.setText(newBundle.getString("calendar.day.fr"));
             }
             if (satLabel != null) {
-                satLabel.setText(newBundle.getString("calendar.day.sat"));
+                satLabel.setText(newBundle.getString("calendar.day.sa"));
             }
             if (sunLabel != null) {
-                sunLabel.setText(newBundle.getString("calendar.day.sun"));
+                sunLabel.setText(newBundle.getString("calendar.day.su"));
             }
         }catch (java.util.MissingResourceException e){
             logger.error("Missing resource key: {}", e.getKey());

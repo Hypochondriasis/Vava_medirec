@@ -67,9 +67,6 @@ public class HomeController {
 		populateDashboard();
 		populateExaminations();
 		populateTasks();
-
-		currentLocale = AppSettings.getLocale();
-		updateUILanguage(currentLocale);
 	}
 
 	private void populateDashboard() {
@@ -263,6 +260,7 @@ public class HomeController {
 
 	protected void setUser(User user) {
 		this.user = user;
+		updateUILanguage(AppSettings.getLocale());
 	}
 
 	//Helper function to show alerts
