@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #ebf2fa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.medirec.medirec.frontend.controller.MedicalRecordsController">
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="1050.0" spacing="10.0">
+                    <children>
+                        <TextField fx:id="searchField" promptText="%enter.name" />
+                        <Button mnemonicParsing="false" onAction="#onSearchClicked" text="%search.button" />
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding></Region>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding></HBox>
+                <FlowPane hgap="10.0" prefHeight="200.0" prefWidth="200.0" vgap="10.0" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <children>
+                        <VBox>
+                            <children>
+                                <HBox prefHeight="42.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <Label fx:id="nameLabel" text="%name.label">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="100.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <TextArea fx:id="basicInfo" prefWidth="600.0" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <Region />
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#onAddRecordClicked" text="%new.record" />
+                                <Button mnemonicParsing="false" onAction="#onShowPatientCardClicked" text="%show.patient.card" />
+
+                            </children>
+                        </VBox>
+                    </children>
+                </FlowPane>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" styleClass="scroll-pane-colored" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <content>
+                <VBox fx:id="recordsContainer" spacing="10.0" style="-fx-background-color: #ebf2fa;">
+                    <children>
+                        <Label text="%patient.history" />
+                    </children></VBox>
+            </content></ScrollPane>
+    </center>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+    <stylesheets>
+        <URL value="@../css/mRecords.css" />
+    </stylesheets>
+</BorderPane>
