@@ -132,25 +132,26 @@ public class PatientCartController {
 			return;
 		}
 
-		System.out.println("initPatient called for: " + patient.getName());
+		System.out.println("initPatient called for: " + patient.getFullName());
 		System.out.println(
-			"Setting birth date to: " + formatDate(patient.getBirthdate())
+			"Setting birth date to: " + patient.getBirth_date()
 		);
-		birthDateField.setText(formatDate(patient.getBirthdate()));
+		String formattedDate = new java.text.SimpleDateFormat("dd.MM.yyyy").format(patient.getBirth_date());
+		birthDateField.setText(formattedDate);
 
 		emailField.setText(safe(patient.getEmail()));
-		phoneField.setText(safe(patient.getPhone()));
+		phoneField.setText(safe(patient.getPhone_number()));
 		addressField.setText(
 			safe(patient.getStreet()) +
 			", " +
-			safe(patient.getCurrentCity()) +
+			safe(patient.getPermanent_city()) +
 			" " +
-			safe(patient.getPostalCode())
+			safe(patient.getPostal_code())
 		);
-		idNumberField.setText(safe(patient.getInsuranceNumber()));
+		idNumberField.setText(safe(patient.getInsurance_number()));
 		bloodTypeField.setText(""); // Ak bude getter pre krvnú skupinu, použi
 
-		pressureField.setText(safe(patient.getBloodPressure()));
+		pressureField.setText(safe(patient.getBlood_pressure()));
 		bmiField.setText(
 			patient.getBmi() != null
 				? String.format("%.2f", patient.getBmi())

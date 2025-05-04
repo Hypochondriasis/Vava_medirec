@@ -81,24 +81,27 @@ public class AddPatientController {
 		}
 
 		try {
-			Patient patient = new Patient(
-				nameField.getText(),
-				birthdatePicker.getValue(),
-				genderComboBox.getValue(),
-				emailField.getText(),
-				phoneField.getText(),
-				birthCityField.getText(),
-				currentCityField.getText(),
-				streetField.getText(),
-				postalCodeField.getText(),
-				insuranceNumberField.getText(),
-				emptyIfBlank(bloodPressureField),
-				parseDoubleOrNull(bmiField),
-				parseDoubleOrNull(weightField),
-				parseDoubleOrNull(heightField)
-			);
+			String[] name_parts = nameField.getText().trim().split("", 2);
+			String firstName = name_parts.length > 0 ? name_parts[0] : "";
+			String lastName = name_parts.length > 1 ? name_parts[1] : "";
 
-			// Môžeš tu pridať kód na uloženie pacienta do DB alebo inej logiky
+			Patient patient = new Patient()
+				.setFirst_name(firstName)
+				.setLast_name(lastName)
+				.setBirth_date(java.sql.Date.valueOf(birthdatePicker.getValue()))
+				.setGender(genderComboBox.getValue())
+				.setEmail(emailField.getText())
+				.setPhone_number(phoneField.getText())
+				.setBirth_city(birthCityField.getText())
+				.setPermanent_city(currentCityField.getText())
+				.setStreet(streetField.getText())
+				.setPostal_code(postalCodeField.getText())
+				.setInsurance_number(insuranceNumberField.getText())
+				.setBlood_pressure(emptyIfBlank(bloodPressureField))
+				.setBmi(parseFloatOrNull(bmiField))
+				.setWeight(parseFloatOrNull(weightField))
+				.setHeight(parseFloatOrNull(heightField));
+
 			showAlert(
 				AlertType.INFORMATION,
 				getString("alert.success.title"),
@@ -115,6 +118,15 @@ public class AddPatientController {
 					e.getMessage()
 				)
 			);
+		}
+	}
+
+	private Float parseFloatOrNull(TextField field) {
+		try {
+			String text = field.getText();
+			return (text == null || text.trim().isEmpty()) ? null : Float.parseFloat(text.trim());
+		} catch (NumberFormatException e) {
+			return null;
 		}
 	}
 

@@ -1,7 +1,6 @@
 package org.medirec.medirec.backend.model;
 
 import lombok.Data;
-import org.medirec.medirec.backend.model.MedicalRecord;
 
 import java.util.ArrayList;
 

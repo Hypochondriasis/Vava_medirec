@@ -128,7 +128,8 @@ public class NewRecordDialogController {
 		String diagnozy = String.join(", ", diagnozyList);
 
 		if (parentController != null) {
-			parentController.addRecord(datum, typ, lieky, diagnozy);
+			String fullNotes = "Typ: " + typ + "; Lieky: " + lieky + "; Diagnóza: " + diagnozy;
+			parentController.addRecord(fullNotes);
 		}
 
 		Stage stage = (Stage) dateField.getScene().getWindow();

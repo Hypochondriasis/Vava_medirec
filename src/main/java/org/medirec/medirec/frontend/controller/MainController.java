@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 import javafx.scene.control.Alert;
 import org.medirec.medirec.backend.model.*;
 import org.medirec.medirec.backend.model.Appointment;
-import org.medirec.medirec.backend.model.MedicalRecord;
 import org.medirec.medirec.backend.model.Patient;
 import org.medirec.medirec.backend.service.DatabaseService;
 import javafx.fxml.FXML;
@@ -83,12 +82,12 @@ public class MainController {
 			user.getDoctor().setMedicalRecords(DatabaseService.getAllInGroup(MedicalRecord.class, "doctor_id", user.getDoctor().getId()));
 			//Getting Patients
 			for(MedicalRecord record : user.getDoctor().getMedicalRecords()) {
-				record.setDoctor(user.getDoctor());
-				record.setPatient(DatabaseService.getOne(Patient.class, record.getPatient_id()));
+				record.setDoctor_id(user.getDoctor().getId());
+				record.setPatient_id(DatabaseService.getOne(Patient.class, record.getPatient_id()).getId());
 
 				// Diagnoses
-				record.setRecordDiagnoses(DatabaseService.getAllInGroup(RecordDiagnosis.class, "medical_record_id", record.getId()));
-				for(RecordDiagnosis recordDiagnosis : record.getRecordDiagnoses()) {
+				record.setDiagnosis(DatabaseService.getAllInGroup(RecordDiagnosis.class, "medical_record_id", record.getId()));
+				for(RecordDiagnosis recordDiagnosis : record.getDiagnosis()) {
 					// Binding Medical record
 					recordDiagnosis.setMedical_record(record);
 					// Binding Diagnosis

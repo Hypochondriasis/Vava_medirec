@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.medirec.medirec.backend.model.IgnoreColumn;
+import org.medirec.medirec.frontend.controller.Patient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +25,7 @@ public class DatabaseService {
 	private DatabaseService() {
 		// prevent instantiation
 	}
+
 
 	private static String getTableName(Class<?> cls) throws Exception {
 		String table = (String) cls.getField("TABLE").get(null);
