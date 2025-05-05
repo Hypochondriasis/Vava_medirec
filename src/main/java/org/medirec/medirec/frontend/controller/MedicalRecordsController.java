@@ -59,6 +59,7 @@ public class MedicalRecordsController {
 	private void initialize() {
 		currentLocale = AppSettings.getLocale();
 		updateUILanguage(currentLocale);
+		basicInfo.setEditable(false);
 	}
 
 	private List<MedicalRecord> loadRecordsForPatient(int patientId) {
@@ -72,6 +73,18 @@ public class MedicalRecordsController {
 
 	@FXML
 	private void onSearchClicked() {
+		// ak je searchField prazdny tak vycisti vsetky textove udaje
+		if(searchField.getText().trim().isEmpty()){
+			ResourceBundle bundle = ResourceBundle.getBundle(
+					"org.medirec.medirec.frontend.messages",
+					AppSettings.getLocale()
+			);
+			nameLabel.setText(bundle.getString("patient.not.found"));
+			basicInfo.clear();
+			recordsContainer.getChildren().clear();
+			return;
+		}
+
 		String query = searchField.getText().trim();
 		Pattern pattern;
 		try {
