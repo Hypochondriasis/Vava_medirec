@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medirec-export>
+    <patient>
+        <first_name>David</first_name>
+        <last_name>Wilson</last_name>
+        <birth_date>1969-02-28</birth_date>
+        <personal_id_number>6902283456</personal_id_number>
+        <gender>M</gender>
+        <email>david.wilson@example.com</email>
+        <phone_number>+1-555-567-8901</phone_number>
+        <birth_city>Seattle</birth_city>
+        <permanent_city>Redmond</permanent_city>
+        <street>654 Cedar Street</street>
+        <postal_code>98052</postal_code>
+        <insurance_number>INS654321987</insurance_number>
+        <blood_pressure>145/90</blood_pressure>
+        <weight>92.0</weight>
+        <height>178.0</height>
+        <bmi>29.0</bmi>
+    </patient>
+</medirec-export>

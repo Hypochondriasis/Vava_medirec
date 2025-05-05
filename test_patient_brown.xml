@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medirec-export>
+    <patient>
+        <first_name>Michael</first_name>
+        <last_name>Brown</last_name>
+        <birth_date>1978-11-05</birth_date>
+        <personal_id_number>7811056789</personal_id_number>
+        <gender>M</gender>
+        <email>michael.brown@example.com</email>
+        <phone_number>+1-555-345-6789</phone_number>
+        <birth_city>Houston</birth_city>
+        <permanent_city>Dallas</permanent_city>
+        <street>789 Pine Road</street>
+        <postal_code>75201</postal_code>
+        <insurance_number>INS456789123</insurance_number>
+        <blood_pressure>135/85</blood_pressure>
+        <weight>88.0</weight>
+        <height>175.0</height>
+        <bmi>28.7</bmi>
+    </patient>
+</medirec-export>

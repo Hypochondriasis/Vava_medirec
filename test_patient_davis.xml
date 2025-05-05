@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medirec-export>
+    <patient>
+        <first_name>Sophia</first_name>
+        <last_name>Davis</last_name>
+        <birth_date>2000-08-11</birth_date>
+        <personal_id_number>0008112345</personal_id_number>
+        <gender>F</gender>
+        <email>sophia.davis@example.com</email>
+        <phone_number>+1-555-456-7890</phone_number>
+        <birth_city>San Francisco</birth_city>
+        <permanent_city>Oakland</permanent_city>
+        <street>321 Maple Lane</street>
+        <postal_code>94607</postal_code>
+        <insurance_number>INS321654987</insurance_number>
+        <blood_pressure>118/76</blood_pressure>
+        <weight>55.0</weight>
+        <height>160.0</height>
+        <bmi>21.5</bmi>
+    </patient>
+</medirec-export>

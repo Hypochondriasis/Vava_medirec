@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medirec-export>
+    <patient>
+        <first_name>Emily</first_name>
+        <last_name>Johnson</last_name>
+        <birth_date>1992-03-22</birth_date>
+        <personal_id_number>9203224567</personal_id_number>
+        <gender>F</gender>
+        <email>emily.johnson@example.com</email>
+        <phone_number>+1-555-234-5678</phone_number>
+        <birth_city>Chicago</birth_city>
+        <permanent_city>Naperville</permanent_city>
+        <street>456 Oak Avenue</street>
+        <postal_code>60540</postal_code>
+        <insurance_number>INS987654321</insurance_number>
+        <blood_pressure>110/70</blood_pressure>
+        <weight>62.0</weight>
+        <height>165.0</height>
+        <bmi>22.8</bmi>
+    </patient>
+</medirec-export>
