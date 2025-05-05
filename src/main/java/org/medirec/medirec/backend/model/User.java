@@ -11,6 +11,7 @@ public class User {
 	private String password_hash;
 	private Integer role_id;
 	private Integer doctor_id;
+	private String name;
 	@IgnoreColumn
 	private Doctor doctor;
 	@IgnoreColumn

@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -238,20 +239,42 @@ public class LoginController implements Initializable {
 
     @FXML
     private void handlePasswordReset() {
-        String name = nameResetField.getText();
-        String email = emailResetField.getText();
+        String name = nameResetField.getText().trim();
+        String email = emailResetField.getText().trim();
         String newPassword = newPasswordField.getText();
 
         if (name.isEmpty() || email.isEmpty() || newPassword.isEmpty()) {
-            // zobraziť chybu
-            System.out.println("Všetky polia sú povinné!");
+            showAlert(Alert.AlertType.WARNING, "Všetky polia sú povinné.");
             return;
         }
 
-        // Tu môžeš spraviť logiku na overenie a uloženie nového hesla
-        System.out.println("Heslo pre " + name + " bolo obnovené.");
+        User user = null;
+        try {
+            List<User> allUsers = DatabaseService.getAll(User.class);
+            user = allUsers.stream()
+                    .filter(u -> u.getEmail().equalsIgnoreCase(email) && u.getName().equalsIgnoreCase(name))
+                    .findFirst()
+                    .orElse(null);
+        } catch (Exception e) {
+            showAlert(Alert.AlertType.ERROR, "Nepodarilo sa načítať používateľov.");
+            return;
+        }
 
-        // Späť na login
-        showLoginPane();
+        if (user == null) {
+            showAlert(Alert.AlertType.ERROR, "Používateľ s daným menom a emailom neexistuje.");
+            return;
+        }
+
+        user.setPassword_hash(newPassword);
+
+        try {
+            DatabaseService.createOrUpdate(user);
+            showAlert(Alert.AlertType.INFORMATION, "Heslo bolo úspešne obnovené.");
+            showLoginPane();
+        } catch (Exception e) {
+            showAlert(Alert.AlertType.ERROR, "Chyba pri ukladaní nového hesla.");
+        }
     }
+
+
 }
