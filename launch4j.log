@@ -1,0 +1,23 @@
+
+
+Version:	3.50
+CmdLine:	D:\_School\WTECH\Vava_medirec\medirec.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	D:\_School\WTECH\Vava_medirec\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.017.000
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Java\jdk-11.0.13
+Substitute:	PATH = D:\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin;C:\Python313\Scripts\;C:\Python313\;C:\MinGW\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;D:\_Softwares\PUTTY\;D:\_Softwares\Git\cmd;C:\MinGW\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;D:\_Szoftverek\Git\cmd;C:\Users\Daniel\AppData\Local\Programs\Python\Python313;C:\Users\Daniel\AppData\Local\Programs\Python\Python313\Scripts;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\MinGW\include\GL;C:\MinGW\bin;D:\_Softwares\gnuplot\bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;D:\_Softwares\Node.js\;C:\ProgramData\chocolatey\bin;D:\_Softwares\XAMPP\php;C:\Users\Dániel Ruzsik\AppData\Local\Programs\Python\Launcher\;C:\Users\Dániel Ruzsik\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\5.0\bin;C:\Users\Dániel Ruzsik\.dotnet\tools;D:\_Softwares\Microsoft VS Code\bin;C:\Users\Dániel Ruzsik\AppData\Local\GitHubDesktop\bin;D:\_Szoftverek\Microsoft VS Code\bin;D:\_Softwares\IntelliJ IDEA 2023.3.4\bin;D:\_Softwares\bin\;C:\Users\Dániel Ruzsik\.dotnet\tools;D:\msys2\ucrt64\bin;C:\msys64\ucrt64\bin;D:\_Softwares\PhpStorm 2024.3.3\bin;C:\Users\Dániel Ruzsik\AppData\Roaming\Composer\vendor\bin;C:\Users\Dániel Ruzsik\AppData\Roaming\npm;C:\Java\jdk-11.0.13\bin
+JRE paths:	C:\Java\jdk-11.0.13;D:\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin;C:\Python313\Scripts\;C:\Python313\;C:\MinGW\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;D:\_Softwares\PUTTY\;D:\_Softwares\Git\cmd;C:\MinGW\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;D:\_Szoftverek\Git\cmd;C:\Users\Daniel\AppData\Local\Programs\Python\Python313;C:\Users\Daniel\AppData\Local\Programs\Python\Python313\Scripts;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\MinGW\include\GL;C:\MinGW\bin;D:\_Softwares\gnuplot\bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;D:\_Softwares\Node.js\;C:\ProgramData\chocolatey\bin;D:\_Softwares\XAMPP\php;C:\Users\Dániel Ruzsik\AppData\Local\Programs\Python\Launcher\;C:\Users\Dániel Ruzsik\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\5.0\bin;C:\Users\Dániel Ruzsik\.dotnet\tools;D:\_Softwares\Microsoft VS Code\bin;C:\Users\Dániel Ruzsik\AppData\Local\GitHubDesktop\bin;D:\_Szoftverek\Microsoft VS Code\bin;D:\_Softwares\IntelliJ IDEA 2023.3.4\bin;D:\_Softwares\bin\;C:\Users\Dániel Ruzsik\.dotnet\tools;D:\msys2\ucrt64\bin;C:\msys64\ucrt64\bin;D:\_Softwares\PhpStorm 2024.3.3\bin;C:\Users\Dániel Ruzsik\AppData\Roaming\Composer\vendor\bin;C:\Users\Dániel Ruzsik\AppData\Roaming\npm;C:\Java\jdk-11.0.13\bin
+Check launcher:	C:\Java\jdk-11.0.13\bin\javaw.exe (OK)
+Version string: 1.011.000_013 / 64-Bit (Ignore)
+Check launcher:	D:\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin\javaw.exe (OK)
+Version string: 1.017.000_015 / 64-Bit (OK)
+Substitute:	EXEDIR = D:\_School\WTECH\Vava_medirec
+Launcher:	D:\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin\javaw.exe
+Launcher args:	--module-path "D:\_School\WTECH\Vava_medirec\javafx-sdk-17.0.15\lib" --add-modules javafx.controls,javafx.fxml -jar "D:\_School\WTECH\Vava_medirec\medirec-1.0-SNAPSHOT.jar"
+Args length:	172/32768 chars
+Exit code:	0
