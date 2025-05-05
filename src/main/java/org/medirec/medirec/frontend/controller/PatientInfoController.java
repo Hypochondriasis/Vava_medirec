@@ -7,12 +7,13 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import org.medirec.medirec.backend.controller.DatabaseController;
 import org.medirec.medirec.backend.model.User;
+import org.medirec.medirec.backend.model.Patient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class PatientInfoController {
 	// Logger
@@ -96,14 +97,17 @@ public class PatientInfoController {
 	@FXML
 	private TableColumn<Patient, String> scheduledTableBirthNumber;
 
-	private final ObservableList<String> patients =
+	private final ObservableList<String> patient_names =
 		FXCollections.observableArrayList();
 
 	// Locale
 	private Locale currentLocale = Locale.getDefault();
 
-	public void initialize() {
-		setupPatients();
+	// Patients list
+	List<Patient> patients;
+
+	public void initialize() throws Exception {
+		//setupPatients();
 		setupTableColumns();
 		initializeButtons();
 		currentLocale = AppSettings.getLocale();
@@ -143,15 +147,25 @@ public class PatientInfoController {
 		});
 	}
 
-	private void setupPatients() {
+	protected void setupPatients() throws Exception {
 		// setapovanie pacientov na neskorsie zobrazenie
+		/*
 		patients.addAll(
 			"Jakub Mráz",
 			"Dominika Poliaková",
 			"Milan Kerestes",
 			"Lenka Oravcová"
-		);
-		patientListView.setItems(patients);
+		);*/
+		try{
+			patients = DatabaseController.getAllPatientsInGroup("doctor_id", user.getDoctor().getId());
+			ObservableList<String> patientNames = FXCollections.observableArrayList();
+			for (Patient patient : patients){
+				patientNames.add(patient.getFirst_name()+" "+patient.getLast_name());
+			}
+			patientListView.setItems(patientNames);
+		}catch (Exception e){
+			logger.error(e.getMessage());
+		}
 	}
 
 	private void setupTableColumns() {
@@ -173,14 +187,23 @@ public class PatientInfoController {
 			.getSelectedItem();
 		if (selectedPatient == null) return;
 
+		Patient patient = null;
+		if(patients.isEmpty()) return;
+		for (Patient p : patients){
+            if ((p.getFirst_name()+" "+p.getLast_name()).equals(selectedPatient)){
+				patient = p;
+			}
+		}
+		if (patient == null) return;
+		// TODO: Add patient last visit and checkup dates selection
 		// nacitanie detailov pacienta po kliknuti
 		nameLabel.setText(selectedPatient);
-		rcLabel.setText("1234567890");
-		insuranceLabel.setText("24");
-		birthLabel.setText("25.09.1989");
-		cityLabel.setText("Streženice");
-		streetLabel.setText("Cintorínska 12");
-		zipLabel.setText("020 01");
+		rcLabel.setText(patient.getPersonal_id_number());
+		insuranceLabel.setText(patient.getInsurance_number());
+		birthLabel.setText(patient.getBirth_date().toString());
+		cityLabel.setText(patient.getPermanent_city());
+		streetLabel.setText(patient.getStreet());
+		zipLabel.setText(patient.getPostal_code());
 		lastExamLabel.setText("05.05.2023");
 		checkLabel.setText("-");
 		/*
@@ -342,7 +365,7 @@ public class PatientInfoController {
 			if (scheduledTableBirthNumber != null){
 				scheduledTableBirthNumber.setText(newBundle.getString("patient.table.column.rc"));
 			}
-		}catch (java.util.MissingResourceException e){
+		}catch (MissingResourceException e){
 			logger.error("Missing resource key: {}", e.getKey());
 		}catch (Exception e) {
 			logger.error("Failed to update UI language", e);

@@ -162,6 +162,7 @@ public class MainController {
 			if (controller instanceof PatientInfoController) {
 				this.patientInfoController = (PatientInfoController) controller;
 				this.patientInfoController.setUser(this.user);
+				this.patientInfoController.setupPatients();
 				this.homeController = null;
 				this.settingsController = null;
 				this.calendarController = null;
@@ -180,11 +181,11 @@ public class MainController {
 			//     ((HomeController) controller).initializeData();
 			// }
 
-		} catch (IOException e) {
+		} catch (Exception e) {
 			logger.debug("Error loading FXML: " + fxmlPath + "\n");
 			e.printStackTrace();
 		}
-	}
+    }
 
 	@FXML
 	private void onHomeClicked() {
