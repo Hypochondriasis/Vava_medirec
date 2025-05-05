@@ -70,7 +70,7 @@ public class NewRecordDialogController {
 		ComboBox<String> medComboBox = new ComboBox<>(availableMeds);
 		medComboBox.setEditable(true);
 		ResourceBundle bundle = ResourceBundle.getBundle(
-			"messages",
+			"org.medirec.medirec.frontend.messages",
 			AppSettings.getLocale()
 		);
 		medComboBox.setPromptText(bundle.getString("med.prompt"));
@@ -82,7 +82,7 @@ public class NewRecordDialogController {
 		ComboBox<String> diagnosisBox = new ComboBox<>(availableDiagnoses);
 		diagnosisBox.setEditable(true);
 		ResourceBundle bundle = ResourceBundle.getBundle(
-			"messages",
+			"org.medirec.medirec.frontend.messages",
 			AppSettings.getLocale()
 		);
 

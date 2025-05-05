@@ -564,3 +564,163 @@ java.lang.IllegalArgumentException: Can not set java.sql.Time field org.medirec.
 2025-05-05 01:17:08.604 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
 2025-05-05 01:17:14.604 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAll: retrieved 3 record(s) from patient
 2025-05-05 01:17:14.640 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where patient_id=1
+2025-05-05 07:57:42.744 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 07:57:42.861 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 07:57:45.734 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@1e2134ac
+2025-05-05 07:57:45.740 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 07:57:45.740 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 07:57:45.859 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-05 07:57:45.893 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=F6Olx9bvMvPRQzd-U9qMLnsaoAlYS9ih7Ilfo_12qnE3aGZxFWDSzw
+2025-05-05 07:57:45.913 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 07:57:45.915 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 07:57:47.325 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@348dd825
+2025-05-05 07:57:47.326 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 07:57:47.327 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 07:57:47.455 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-05 07:57:47.456 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-05 07:57:47.532 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-05 07:57:47.844 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-05 07:57:47.937 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-05 07:57:48.049 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 07:57:48.136 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-05 07:57:48.249 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-05 07:57:48.341 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-05 07:57:48.661 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-05 07:57:48.868 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-05 07:57:49.169 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 3 record(s) from appointment where doctor_id=1
+2025-05-05 07:57:49.229 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 07:57:49.380 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 07:57:49.469 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=4
+2025-05-05 07:57:49.587 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 07:57:49.657 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 07:57:49.729 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 07:57:58.995 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAll: retrieved 3 record(s) from patient
+2025-05-05 07:57:59.119 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where patient_id=1
+2025-05-05 09:10:40.204 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 09:10:40.242 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 09:10:41.778 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@c91faee
+2025-05-05 09:10:41.779 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 09:10:41.779 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 09:10:41.791 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-05 09:10:41.840 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=3Bpp0PZTGz7mahMtL9sv7qFWPinznfCruzwC22nhA_TaR0kVKlrXZA
+2025-05-05 09:10:41.901 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 09:10:41.901 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 09:10:41.939 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@94a94fa
+2025-05-05 09:10:41.940 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 09:10:41.940 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 09:10:41.943 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-05 09:10:41.943 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-05 09:10:41.952 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-05 09:10:42.444 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-05 09:10:42.448 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-05 09:10:42.481 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:10:42.498 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-05 09:10:42.516 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-05 09:10:42.518 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-05 09:10:42.554 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-05 09:10:42.556 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-05 09:10:42.560 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 3 record(s) from appointment where doctor_id=1
+2025-05-05 09:10:42.561 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:10:42.562 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:10:42.564 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=4
+2025-05-05 09:10:42.565 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:10:42.567 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:10:42.568 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:10:54.443 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAll: retrieved 3 record(s) from patient
+2025-05-05 09:10:54.445 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where patient_id=1
+2025-05-05 09:11:37.731 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 09:11:37.739 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 09:11:38.117 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@390c3f88
+2025-05-05 09:11:38.118 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 09:11:38.118 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 09:11:38.129 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-05 09:11:38.143 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=z_5AsjaCnD71jb9r7KiWJRySQzPYtC2WgHdjLwBQ-v4EQI9Enw7fxA
+2025-05-05 09:11:38.150 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 09:11:38.150 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 09:11:38.186 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@890b835
+2025-05-05 09:11:38.186 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 09:11:38.186 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 09:11:38.188 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-05 09:11:38.188 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-05 09:11:38.197 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-05 09:11:38.336 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-05 09:11:38.340 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-05 09:11:38.345 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:11:38.349 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-05 09:11:38.351 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-05 09:11:38.354 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-05 09:11:38.357 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-05 09:11:38.360 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-05 09:11:38.364 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 3 record(s) from appointment where doctor_id=1
+2025-05-05 09:11:38.366 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:11:38.368 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:11:38.370 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=4
+2025-05-05 09:11:38.372 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:11:38.374 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:11:38.376 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:11:45.017 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAll: retrieved 3 record(s) from patient
+2025-05-05 09:11:45.019 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where patient_id=1
+2025-05-05 09:13:12.945 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 09:13:12.952 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 09:13:13.420 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@435d8ffe
+2025-05-05 09:13:13.422 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 09:13:13.422 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 09:13:13.434 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-05 09:13:13.464 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=FhoJW2u5fy_e5aAlUdWgkMvpsQg3vaFAy7Y4Srhi9QL5Eo4tBih3IQ
+2025-05-05 09:13:13.504 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 09:13:13.504 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 09:13:13.559 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@bde0f9d
+2025-05-05 09:13:13.560 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 09:13:13.560 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 09:13:13.562 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-05 09:13:13.563 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-05 09:13:13.575 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-05 09:13:13.727 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-05 09:13:13.732 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-05 09:13:13.749 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:13:13.774 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-05 09:13:13.786 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-05 09:13:13.788 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-05 09:13:13.813 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-05 09:13:13.815 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-05 09:13:13.836 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 3 record(s) from appointment where doctor_id=1
+2025-05-05 09:13:13.839 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:13:13.841 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:13:13.843 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=4
+2025-05-05 09:13:13.844 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:13:13.846 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:13:13.847 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:13:18.755 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAll: retrieved 3 record(s) from patient
+2025-05-05 09:13:18.757 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where patient_id=1
+2025-05-05 09:14:59.889 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 09:14:59.895 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 09:15:00.326 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@7307bc60
+2025-05-05 09:15:00.329 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 09:15:00.330 [JavaFX Application Thread] INFO  o.m.m.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 09:15:00.348 [JavaFX Application Thread] INFO  o.m.m.backend.service.AuthService - User alice.smith@doc.com authenticated successfully with id=2
+2025-05-05 09:15:00.361 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Login successful, token=Yi_3fpZDeLuEVSuXXEZacyqxBh0_626fsBTiGuQ8v58VJ-ttgoS8mw
+2025-05-05 09:15:00.367 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - Initializing HikariCP DataSource: url=jdbc:postgresql://postgresql.r6.websupport.sk:5432/vavadb, user=databazaVava
+2025-05-05 09:15:00.367 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2025-05-05 09:15:00.417 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - MyHikariCP - Added connection org.postgresql.jdbc.PgConnection@4ecba470
+2025-05-05 09:15:00.417 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2025-05-05 09:15:00.417 [JavaFX Application Thread] INFO  com.backend.config.DatabaseConfig - HikariCP initialized. Pool name: MyHikariCP, MaxPoolSize: 20, MinimumIdle: 2
+2025-05-05 09:15:00.421 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved User with id=2
+2025-05-05 09:15:00.423 [JavaFX Application Thread] INFO  o.m.m.f.controller.LoginController - Retrieved user: User(id=2, email=alice.smith@doc.com, password_hash=hash_doc1, role_id=2, doctor_id=1, doctor=null, role=null)
+2025-05-05 09:15:00.436 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Role with id=2
+2025-05-05 09:15:00.482 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Doctor with id=1
+2025-05-05 09:15:00.486 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where doctor_id=1
+2025-05-05 09:15:00.495 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:15:00.497 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from record_diagnosis where medical_record_id=1
+2025-05-05 09:15:00.499 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Diagnosis with id=1
+2025-05-05 09:15:00.501 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved DiagnosisType with id=1
+2025-05-05 09:15:00.504 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from prescription where medical_record_id=1
+2025-05-05 09:15:00.509 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Medication with id=1
+2025-05-05 09:15:00.513 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 3 record(s) from appointment where doctor_id=1
+2025-05-05 09:15:00.514 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:15:00.516 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:15:00.518 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=4
+2025-05-05 09:15:00.521 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:15:00.529 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved Patient with id=1
+2025-05-05 09:15:00.530 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getOne: retrieved AppointmentStatus with id=1
+2025-05-05 09:15:04.414 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAll: retrieved 3 record(s) from patient
+2025-05-05 09:15:04.417 [JavaFX Application Thread] INFO  o.m.m.b.service.DatabaseService - getAllInGroup: retrieved 1 record(s) from medical_record where patient_id=1

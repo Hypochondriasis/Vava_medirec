@@ -187,7 +187,7 @@ public class MedicalRecordsController {
 	private void onAddRecordClicked() {
 		if (currentPatient == null) {
 			ResourceBundle bundle = ResourceBundle.getBundle(
-				"messages",
+				"org.medirec.medirec.frontend.messages",
 				AppSettings.getLocale()
 			);
 
@@ -201,12 +201,12 @@ public class MedicalRecordsController {
 
 		try {
 			ResourceBundle bundle = ResourceBundle.getBundle(
-				"messages",
+				"org.medirec.medirec.frontend.messages",
 				AppSettings.getLocale()
 			);
 
 			FXMLLoader loader = new FXMLLoader(
-				getClass().getResource("newRecord.fxml"),
+				getClass().getResource("/org/medirec/medirec/frontend/fxml/newRecord.fxml"),
 				bundle
 			);
 			Scene scene = new Scene(loader.load());
@@ -229,7 +229,7 @@ public class MedicalRecordsController {
 	private void onShowPatientCardClicked() {
 		if (currentPatient == null) {
 			ResourceBundle bundle = ResourceBundle.getBundle(
-				"messages",
+				"org.medirec.medirec.frontend.messages",
 				AppSettings.getLocale()
 			);
 
@@ -243,12 +243,12 @@ public class MedicalRecordsController {
 
 		try {
 			ResourceBundle bundle = ResourceBundle.getBundle(
-				"messages",
+				"org.medirec.medirec.frontend.messages",
 				AppSettings.getLocale()
 			);
 
 			FXMLLoader loader = new FXMLLoader(
-				getClass().getResource("patientCart.fxml"),
+				getClass().getResource("/org/medirec/medirec/frontend/fxml/patientCart.fxml"),
 				bundle
 			);
 			VBox patientCard = loader.load();
