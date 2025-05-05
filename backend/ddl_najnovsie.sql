@@ -287,6 +287,7 @@ INSERT INTO doctor(id, first_name, last_name, specialization, code) VALUES
   (3, 'Clara', 'Davis', 'Dermatology', 'DOC003')
 ON CONFLICT DO NOTHING;
 
+
 -- 5. Patient
 INSERT INTO patient(
   id, first_name, last_name, birth_date, personal_id_number, gender,
@@ -302,10 +303,11 @@ INSERT INTO patient(
 ON CONFLICT DO NOTHING;
 
 -- 6. "User"
-INSERT INTO users(id, email, password_hash, role_id, doctor_id) VALUES
-  (1, 'admin@example.com',  'hash_admin', 1, 1),
-  (2, 'alice.smith@doc.com','hash_doc1',   2, 1),
-  (3, 'eve.adams@pat.com',  'hash_pat1',   3, 1)
+INSERT INTO users(id, email, password_hash, role_id, doctor_id, name) VALUES
+  (1, 'admin@example.com',  'hash_admin', 1, 1, 'Testovacie meno'),
+  (2, 'alice.smith@doc.com','hash_doc1',   2, 1, 'Testovacie meno'),
+  (3, 'eve.adams@pat.com',  'hash_pat1',   3, 1, 'Testovacie meno'),
+  (4, 'bob.jones@doc.com', 'hash_doc2', 2, 2, 'Bob Jones')
 ON CONFLICT DO NOTHING;
 
 -- 8. Medication
