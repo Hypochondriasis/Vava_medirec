@@ -2,10 +2,12 @@ package org.medirec.medirec.frontend.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -102,6 +104,10 @@ public class NewRecordDialogController {
 		String datum = dateField.getText();
 		String typ = examTypeField.getText();
 
+		if (datum.isEmpty() || typ.isEmpty()) {
+			showAlert(Alert.AlertType.INFORMATION, "Please fill out all the fields", "Je potrebné vyplniť všetky polia");
+		}
+
 		List<String> liekyList = new ArrayList<>();
 		for (javafx.scene.Node node : medsContainer.getChildren()) {
 			if (node instanceof ComboBox<?>) {
@@ -124,6 +130,10 @@ public class NewRecordDialogController {
 			}
 		}
 
+		if (liekyList.isEmpty() || diagnozyList.isEmpty()) {
+			showAlert(Alert.AlertType.INFORMATION, "Please fill out all the fields", "Je potrebné vyplniť všetky polia");
+		}
+
 		String lieky = String.join(", ", liekyList);
 		String diagnozy = String.join(", ", diagnozyList);
 
@@ -132,7 +142,23 @@ public class NewRecordDialogController {
 			parentController.addRecord(fullNotes);
 		}
 
+		showAlert(Alert.AlertType.INFORMATION, "Record created successfully", "Záznam bol úspešne pridaný");
+
 		Stage stage = (Stage) dateField.getScene().getWindow();
 		stage.close();
+	}
+
+	//Helper function to show alerts
+	private void showAlert(Alert.AlertType type, String msg_en, String msg_sk) {
+		Locale current = AppSettings.getLocale();
+		String msg;
+		if (current.getLanguage().equals("sk")) {
+			msg = msg_sk;
+		}else{
+			msg = msg_en;
+		}
+		Alert alert = new Alert(type, msg);
+		alert.setHeaderText(null);
+		alert.showAndWait();
 	}
 }

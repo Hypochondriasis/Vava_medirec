@@ -146,8 +146,23 @@ public class MedicalRecordsController {
 			} catch (Exception e) {
 				// Logging the exception
                 logger.error("Error saving medical record: {}", e.getMessage());
+				showAlert(Alert.AlertType.ERROR, "Failed to add the medical record", "Problém s pridaním nového záznamu");
 			}
 		}
+	}
+
+	//Helper function to show alerts
+	private void showAlert(Alert.AlertType type, String msg_en, String msg_sk) {
+		Locale current = AppSettings.getLocale();
+		String msg;
+		if (current.getLanguage().equals("sk")) {
+			msg = msg_sk;
+		}else{
+			msg = msg_en;
+		}
+		Alert alert = new Alert(type, msg);
+		alert.setHeaderText(null);
+		alert.showAndWait();
 	}
 
 
