@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.lenprexmp.AddNurseController">
+
+    <left>
+        <VBox spacing="10" prefWidth="200">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="%users">
+                <font>
+                    <Font size="16"/>
+                </font>
+            </Label>
+            <ListView fx:id="userListView" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="15" >
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="%add.user.labeluser">
+                <font>
+                    <Font size="20.0" />
+                </font>
+            </Label>
+
+            <TextField fx:id="usernameField" promptText="%username.prompt" />
+            <TextField fx:id="emailField" promptText="%email" />
+            <PasswordField fx:id="passwordField" promptText="%password.prompt" />
+
+            <Button fx:id="addUserButton" onAction="#handleAddUser"
+                    style="-fx-background-color: #3e8ed0; -fx-text-fill: white;"
+                    text="%save.user" />
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="320.0" prefWidth="300.0" style="-fx-background-color: ebf2fa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lenprexmp.AppointmentPopupController">
+
+    <VBox alignment="CENTER" spacing="10" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="%appointment.new" />
+
+        <!-- Appointment Date -->
+        <DatePicker fx:id="datePicker" />
+
+        <!-- Appointment Type -->
+        <Label text="%appointment.type.label" />
+        <ComboBox fx:id="typeComboBox" />
+
+        <!-- Time -->
+        <Label text="Time:" />
+        <ComboBox fx:id="timeComboBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="08:00" />
+                    <String fx:value="09:00" />
+                    <String fx:value="10:00" />
+                    <String fx:value="11:00" />
+                    <String fx:value="13:00" />
+                    <String fx:value="14:00" />
+                    <String fx:value="15:00" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Patient Selection -->
+        <Label text="Patient:" />
+        <ComboBox fx:id="patientComboBox" />
+
+        <!-- Appointment Status -->
+        <Label text="Status:" />
+        <ComboBox fx:id="statusComboBox" />
+
+        <!-- Add Button -->
+        <Button fx:id="addButton" maxWidth="Infinity" text="%appointment.button.add" />
+    </VBox>
+
+    <stylesheets>
+        <URL value="@./css/popup.css" />
+    </stylesheets>
+</AnchorPane>

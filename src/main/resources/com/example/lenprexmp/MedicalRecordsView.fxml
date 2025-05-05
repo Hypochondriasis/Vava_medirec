@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/19"
+            fx:controller="com.example.lenprexmp.MedicalRecordsController"
+            style="-fx-background-color: #ebf2fa;">
+
+    <top>
+        <VBox spacing="10" >
+            <HBox spacing="10">
+                <Label text="%name.label"/>
+                <Label fx:id="nameLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            </HBox>
+            <TextArea fx:id="basicInfo" editable="false" prefRowCount="2" visible="false" managed="false" />
+
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="20" >
+
+                <!-- New Record Form -->
+                <TitledPane text="%new.record" expanded="true">
+                    <VBox spacing="10" >
+                        <TextArea fx:id="notesArea" promptText="%enter.notes.here" prefRowCount="3"/>
+
+                        <Label text="%prescriptions"/>
+                        <HBox spacing="10">
+                            <ComboBox fx:id="medicationCombo" promptText="%select.medication" prefWidth="200"/>
+                            <TextField fx:id="dosageField" promptText="%dosage"/>
+                            <TextField fx:id="frequencyField" promptText="%frequency"/>
+                            <Button text="%add" onAction="#onAddPrescription"/>
+                        </HBox>
+                        <ListView fx:id="prescriptionList" prefHeight="80"/>
+
+                        <Label text="%diagnoses"/>
+                        <HBox spacing="10">
+                            <ComboBox fx:id="diagnosisCombo" promptText="%select.diagnosis" prefWidth="300"/>
+                            <Button text="%add" onAction="#onAddDiagnosis"/>
+                        </HBox>
+                        <ListView fx:id="diagnosisList" prefHeight="80"/>
+
+                        <Label text="%points"/>
+                        <HBox spacing="10">
+                            <ComboBox fx:id="pointCombo" promptText="%select.point" prefWidth="300"/>
+                            <Button text="%add" onAction="#onAddPoint"/>
+                        </HBox>
+                        <ListView fx:id="pointList" prefHeight="80"/>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="10">
+                            <Button text="%save.record" onAction="#onSaveRecord"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+
+                <Label text="%patient.history" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <ScrollPane fx:id="scrollPane" fitToWidth="true" prefHeight="300">
+                    <VBox fx:id="recordsContainer" spacing="10"/>
+                </ScrollPane>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

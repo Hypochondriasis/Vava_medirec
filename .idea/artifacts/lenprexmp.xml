@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="lenprexmp">
+    <output-path>$PROJECT_DIR$/out/artifacts/lenprexmp</output-path>
+    <root id="root">
+      <element id="archive" name="lenprexmp.jar">
+        <element id="module-output" name="lenprexmp" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.lenprexmp.ExportRecordsController">
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Export Medical Records"/>
+
+            <HBox spacing="10">
+                <Label text="Year:"/>
+                <ComboBox fx:id="yearComboBox" prefWidth="100"/>
+                <Label text="Month:"/>
+                <ComboBox fx:id="monthComboBox" prefWidth="100"/>
+            </HBox>
+
+            <Button fx:id="exportButton" text="Export XML" onAction="#handleExport"/>
+        </VBox>
+    </center>
+</BorderPane>

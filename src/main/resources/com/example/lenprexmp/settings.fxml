@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.lenprexmp.SettingsController">
+
+    <left>
+        <VBox spacing="10" prefWidth="200" BorderPane.alignment="CENTER">
+            <Label text="Doctors">
+                <font>
+                    <Font size="16"/>
+                </font>
+            </Label>
+            <ListView fx:id="doctorListView" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="15.0">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="%add.user.label">
+                <font>
+                    <Font size="20.0" />
+                </font>
+            </Label>
+
+            <TextField fx:id="usernameField" promptText="%username.prompt" />
+            <TextField fx:id="emailField" promptText="%email" />
+            <PasswordField fx:id="passwordField" promptText="%password.prompt" />
+
+            <!-- Doctor fields always visible now -->
+            <TextField fx:id="specializationField" promptText="%specialization.prompt" />
+            <TextField fx:id="doctorCodeField" promptText="%doctorcode.prompt" />
+
+            <Button fx:id="addUserButton" onAction="#handleAddUser"
+                    style="-fx-background-color: #3e8ed0; -fx-text-fill: white;"
+                    text="%add.user.label" />
+
+            <stylesheets>
+                <URL value="@./css/settings.css"/>
+            </stylesheets>
+        </VBox>
+    </center>
+</BorderPane>
