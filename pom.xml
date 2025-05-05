@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <javafx.version>17.0.11</javafx.version>
+        <javafx.version>19</javafx.version>
         <javafx.platform>win</javafx.platform>         <!-- for Windows -->
         <junit.version>5.9.1</junit.version>
     </properties>
@@ -100,13 +100,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.32</version>
             <scope>provided</scope>
-        </dependency>
-
-        <!-- BCrypt - password hashing -->
-        <dependency>
-            <groupId>org.mindrot</groupId>
-            <artifactId>jbcrypt</artifactId>
-            <version>0.4</version>
         </dependency>
     </dependencies>
 
