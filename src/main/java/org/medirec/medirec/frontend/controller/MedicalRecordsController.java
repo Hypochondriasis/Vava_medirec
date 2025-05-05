@@ -13,9 +13,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.medirec.medirec.backend.controller.DatabaseController;
 import org.medirec.medirec.backend.model.MedicalRecord;
 import org.medirec.medirec.backend.model.User;
 import org.medirec.medirec.backend.service.DatabaseService;
+import org.medirec.medirec.backend.util.JwtUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -127,13 +129,24 @@ public class MedicalRecordsController {
 
 	public void addRecord(String notes) {
 		if (currentPatient != null) {
-			MedicalRecord record = new MedicalRecord();
-			record.setPatient_id(currentPatient.getId());
-			record.setNotes(notes);
-			record.setCreated_at(new Timestamp(System.currentTimeMillis()));
-			record.setUpdated_at(new Timestamp(System.currentTimeMillis()));
-			currentPatient.addRecord(record);
-			renderRecordOnTop(record);
+			try {
+				MedicalRecord record = new MedicalRecord();
+				record.setPatient_id(currentPatient.getId());
+				record.setDoctor_id(Math.toIntExact(JwtUtil.getUserFromToken().getDoctor_id()));
+				record.setNotes(notes);
+				record.setCreated_at(new Timestamp(System.currentTimeMillis()));
+				record.setUpdated_at(new Timestamp(System.currentTimeMillis()));
+
+				// Save the record to the database
+				MedicalRecord savedRecord = DatabaseController.saveOrUpdateMedicalRecord(record);
+
+				// Update the record with the ID from the database
+				currentPatient.addRecord(savedRecord);
+				renderRecordOnTop(savedRecord);
+			} catch (Exception e) {
+				// Logging the exception
+                logger.error("Error saving medical record: {}", e.getMessage());
+			}
 		}
 	}
 
